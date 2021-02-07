@@ -1,0 +1,20 @@
+# Node
+npm-debug.log
+node_modules
+# Mac
+.DS_Store
+
+# config
+config.yml
+
+# WebStorm
+.idea/
+
+# vi
+*~
+
+# General
+log/
+*.log
+
+# etc...

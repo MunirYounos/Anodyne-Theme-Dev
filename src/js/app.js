@@ -5,3 +5,4 @@ let axios = require('axios');
 window.axios = axios;
 window.Noty = require('noty');
 require('./components/productForm.js');
+require('./components/cart.js');

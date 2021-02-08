@@ -1,5 +1,5 @@
 let form = document.querySelector('.product-single__form');
-if(form){
+if(form && form !== null){
 	let productForm = new Vue({
 		el: ".product-single__form",
 		data(){
@@ -11,13 +11,13 @@ if(form){
 			}
 		},
 		methods: {
-			addToCart(e){
+			addToCart(){
 				axios.post('/cart/add.js', this.form)
 									.then(function(response){
 										new Noty({
 											type: 'success',
 											timeout: 3000,
-											layout: 'centerRight',
+											layout: 'topRight',
 											text:'Product added to cart...'
 										}).show();
 									})
@@ -25,7 +25,7 @@ if(form){
 										new Noty({
 											type: 'error',
 											timeout: 3000,
-											layout: 'centerRight',
+											layout: 'topRight',
 											text:'Something went wrong sorry...'
 										}).show();
 									})

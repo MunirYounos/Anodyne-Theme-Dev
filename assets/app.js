@@ -1854,30 +1854,53 @@ window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js")
 
 __webpack_require__(/*! ./components/productForm.js */ "./src/js/components/productForm.js");
 
+__webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
+
 /***/ }),
 
-/***/ "./src/js/components/productForm.js":
-/*!******************************************!*\
-  !*** ./src/js/components/productForm.js ***!
-  \******************************************/
-/***/ (() => {
+/***/ "./src/js/components/cart.js":
+/*!***********************************!*\
+  !*** ./src/js/components/cart.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-var form = document.querySelector('.product-single__form');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
-if (form) {
-  var productForm = new Vue({
-    el: ".product-single__form",
+var cart = document.querySelector('.cart');
+
+if (cart && cart !== null) {
+  var productCart = new Vue({
+    el: ".cart",
+    delimiters: ['${', '}'],
     data: function data() {
       return {
-        form: {
-          id: document.querySelector('.vue__id').value,
-          quantity: 1
-        }
+        cart: null
       };
     },
+    created: function created() {
+      this.getCart();
+    },
     methods: {
-      addToCart: function addToCart(e) {
-        axios.post('/cart/add.js', this.form).then(function (response) {
+      getCart: function getCart() {
+        var _this = this;
+
+        axios__WEBPACK_IMPORTED_MODULE_0___default().get('/cart.js').then(function (response) {
+          console.log(response);
+          _this.cart = response.data;
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            timeout: 3000,
+            layout: 'centerRight',
+            text: 'Something went wrong sorry...'
+          }).show();
+        });
+      },
+      addToCart: function addToCart() {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().post('/cart/add.js', this.form).then(function (response) {
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -1889,6 +1912,49 @@ if (form) {
             type: 'error',
             timeout: 3000,
             layout: 'centerRight',
+            text: 'Something went wrong sorry...'
+          }).show();
+        });
+      }
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/components/productForm.js":
+/*!******************************************!*\
+  !*** ./src/js/components/productForm.js ***!
+  \******************************************/
+/***/ (() => {
+
+var form = document.querySelector('.product-single__form');
+
+if (form && form !== null) {
+  var productForm = new Vue({
+    el: ".product-single__form",
+    data: function data() {
+      return {
+        form: {
+          id: document.querySelector('.vue__id').value,
+          quantity: 1
+        }
+      };
+    },
+    methods: {
+      addToCart: function addToCart() {
+        axios.post('/cart/add.js', this.form).then(function (response) {
+          new Noty({
+            type: 'success',
+            timeout: 3000,
+            layout: 'topRight',
+            text: 'Product added to cart...'
+          }).show();
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            timeout: 3000,
+            layout: 'topRight',
             text: 'Something went wrong sorry...'
           }).show();
         });
@@ -17260,6 +17326,18 @@ Vue.compile = compileToFunctions;
 /******/ 	// It's empty as some runtime module handles the default behavior
 /******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

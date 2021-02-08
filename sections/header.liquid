@@ -298,7 +298,7 @@
                   </li>
                 {% endif %}
 
-                <li class="site-nav__item site-nav__item--compressed">
+                <li class="site-nav__item site-nav__item--compressed site-nav--has-dropdown">
                   <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
                     <span class="icon-fallback-text">
                       <span class="icon__shopping-bag" aria-hidden="true">{% render 'bag-svg' %}</span>
@@ -308,6 +308,11 @@
                      {{cart.item_count }}
                     </span>
                   </a>
+               
+                 
+                        {% render 'mini-cart' %}
+                
+          
                 </li>
 
               </ul>

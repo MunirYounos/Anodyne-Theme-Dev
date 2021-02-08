@@ -1,0 +1,61 @@
+<!-- This file has been calledl in navbar.liquid -->
+<ul id="MenuParent-2" class="site-nav__dropdown mini-cart" data-meganav-dropdown="">
+  <template v-if="cart">
+      <li class="mini-cart__image" v-for="(item, index) in cart.items">
+          <template v-if="item.image">
+              <a class="mini-cart__a" :href="item.url">
+                <img class="mini-cart__img" width="80" :src="item.image" alt="">
+              </a>
+          </template>
+          <div class="mini-cart__body">
+
+              <h5 class="mini-cart__title"><a :href="item.url">${ item.product_title }</a></h5>
+      
+              <template v-if="!item.product_has_only_default_variant">
+                <p class="mini-cart__p">${ item.variant_title }</p>
+              </template>
+          
+              <div class="mini-cart__price">
+                <template v-if="item.original_line_price != item.line_price">
+    
+                  <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                    ${ item.price }
+                  <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                  <s>${ item.original_price }</s>
+
+                </template>
+
+                <template v-else>
+                      ${item.price | money }
+                </template>
+              </div>
+
+              <div class="mini-cart__quantity">
+
+                  <div class="mini-cart__minus">
+                    <span class="minus" @click="decrement(item)">-</span>
+                  </div>
+
+                  <input type="text" v-model="item.quantity" class="mini-cart__input" aria-label="Product quantity">
+
+                  <div class="mini-cart__plus">
+                    <span class="plus" @click="increment(item)">+</span>
+                  </div>
+
+              </div>
+
+          </div>
+      </li>
+
+  </template>
+
+    
+    <li class="buttons-wrapper">
+        <div class="mini-cart__buttons">
+          <a href="/cart" class="btn mini-cart__cart">Cart</a>
+          <a href="/checkout" class="btn mini-cart__checkout">Checkout</a>
+        </div>
+    </li>
+    
+    
+</ul>

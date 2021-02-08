@@ -1850,11 +1850,15 @@ vue__WEBPACK_IMPORTED_MODULE_0__.default.config.productionTip = false;
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 window.axios = axios;
-window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
+window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js"); // Vue custom filter
+
+__webpack_require__(/*! ./filters/money.js */ "./src/js/filters/money.js");
 
 __webpack_require__(/*! ./components/productForm.js */ "./src/js/components/productForm.js");
 
 __webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
+
+__webpack_require__(/*! ./components/miniCart.js */ "./src/js/components/miniCart.js");
 
 /***/ }),
 
@@ -1868,6 +1872,12 @@ __webpack_require__(/*! ./components/cart.js */ "./src/js/components/cart.js");
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 var cart = document.querySelector('.cart');
 
@@ -1884,6 +1894,28 @@ if (cart && cart !== null) {
       this.getCart();
     },
     methods: {
+      updateCart: function updateCart() {
+        var result = this.cart.items.reduce(function (accumulator, target) {
+          return _objectSpread(_objectSpread({}, accumulator), {}, _defineProperty({}, target.variant_id, target.quantity));
+        }, {});
+        console.log(result);
+        axios__WEBPACK_IMPORTED_MODULE_0___default().post('/cart/update.js', {
+          updates: result
+        }).then(function (response) {
+          new Noty({
+            type: 'success',
+            timeout: 3000,
+            layout: 'topRight',
+            text: 'You updated products in your cart'
+          }).show();
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'There was something wrong!!'
+          }).show();
+        });
+      },
       getCart: function getCart() {
         var _this = this;
 
@@ -1913,6 +1945,127 @@ if (cart && cart !== null) {
             timeout: 3000,
             layout: 'centerRight',
             text: 'Something went wrong sorry...'
+          }).show();
+        });
+      }
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/components/miniCart.js":
+/*!***************************************!*\
+  !*** ./src/js/components/miniCart.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
+
+
+if (document.querySelector('.mini-cart')) {
+  var MiniCart = new Vue({
+    el: ".mini-cart",
+    delimiters: ['${', '}'],
+    data: function data() {
+      return {
+        cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
+      };
+    },
+    computed: {
+      cart: function cart() {
+        return this.cartData[0];
+      }
+    },
+    created: function created() {
+      // mini cart is on every page, that's why, we cal it once here
+      _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.getCart();
+    },
+    methods: {
+      //Cart total items
+      // Remove item from cart
+      remove: function remove(item) {
+        var found = this.cart.items.find(function (product) {
+          return product.variant_id == item.variant_id;
+        });
+
+        if (found) {
+          this.$delete(this.cart.items, this.cart.items.indexOf(found));
+        }
+      },
+      // Increment item by 1
+      increment: function increment(item) {
+        var found = this.cart.items.find(function (product) {
+          return product.variant_id == item.variant_id;
+        });
+
+        if (found) {
+          this.updateCart(found, 1);
+        }
+      },
+      // Decrement item by 1
+      decrement: function decrement(item) {
+        var found = this.cart.items.find(function (product) {
+          return product.variant_id == item.variant_id;
+        });
+
+        if (found) {
+          if (item.quantity > 0) {
+            this.updateCart(found, -1);
+          }
+        }
+      },
+      updateCart: function updateCart(item, quantity) {
+        var _this = this;
+
+        var q = quantity + item.quantity;
+        var data = {
+          quantity: q,
+          id: item.key
+        };
+
+        if (q < 1) {
+          this.remove(item);
+        }
+
+        axios.post('/cart/change.js', data).then(function (response) {
+          // Find the current item and new item to compare the quanity
+          var currentItem = _this.cartData[0].items.find(function (product) {
+            return product.variant_id == item.variant_id;
+          });
+
+          var newItem = response.data.items.find(function (product) {
+            return product.variant_id == item.variant_id;
+          }); // If item exist
+
+          if (currentItem) {
+            // check if item quantity changed. Only change.js can detect this on response
+            if (quantity > 0 && currentItem.quantity == newItem.quantity) {
+              new Noty({
+                type: 'warning',
+                timeout: 3000,
+                layout: 'topRight',
+                text: 'No more in stock'
+              }).show();
+            } else {
+              // add one to current item
+              currentItem.quantity += quantity;
+              new Noty({
+                type: 'success',
+                timeout: 3000,
+                layout: 'topRight',
+                text: 'Your cart items updated'
+              }).show();
+            }
+          }
+        })["catch"](function (error) {
+          console.log(error);
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'Something wrong!!'
           }).show();
         });
       }
@@ -1962,6 +2115,53 @@ if (form && form !== null) {
     }
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/filters/money.js":
+/*!*********************************!*\
+  !*** ./src/js/filters/money.js ***!
+  \*********************************/
+/***/ (() => {
+
+Vue.filter('money', function (value) {
+  var sign = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'KR';
+  if (!value) return 0;
+  return (value / 100).toFixed(2) + ' - ' + sign;
+});
+
+/***/ }),
+
+/***/ "./src/js/shared/cartData.js":
+/*!***********************************!*\
+  !*** ./src/js/shared/cartData.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "store": () => (/* binding */ store)
+/* harmony export */ });
+// Shared data between cart and mini-cart
+var store = {
+  state: {
+    cartData: []
+  },
+  getCart: function getCart() {
+    var _this = this;
+
+    axios.get('/cart.js').then(function (response) {
+      _this.state.cartData.push(response.data);
+    })["catch"](function (error) {
+      new Noty({
+        type: 'error',
+        layout: 'topRight',
+        text: 'There was an error !!'
+      }).show();
+    });
+  }
+};
 
 /***/ }),
 

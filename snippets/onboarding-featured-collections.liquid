@@ -1,7 +1,7 @@
 <!-- snippets/onboarding-featured-collections.liquid -->
 {% for i in (1..5) %}
   {% capture width %}
-    {% cycle 'one-whole medium--one-half large--one-half', 'one-half medium--one-half large--one-half', 'one-half medium--one-third large--one-third', 'one-half medium--one-third large--one-third', 'one-half medium--one-third large--one-third' %}
+    {% cycle 'small--one-half medium--one-quarter large--one-sixth', 'small--one-half medium--one-quarter large--one-sixth', 'small--one-half medium--one-quarter large--one-sixth', 'small--one-half medium--one-quarter large--one-sixth', 'small--one-half medium--one-quarter large--one-sixth' %}
   {% endcapture %}
   <div class="grid__item {{ width }} collection-collage__item text-center">
     <a href="/admin/collections" class="collection-grid__item-link collection-collage__item-wrapper">

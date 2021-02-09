@@ -70,9 +70,9 @@
     {% assign grid_item_width = "one-whole" %}
     {% assign grid_item_responsive = true %}
   {% elsif collection_index == 1 and divisible_by_two > 0 %}
-    {% assign grid_item_width = "one-whole medium--one-half large--one-half" %}
+    {% assign grid_item_width = "small--one-half medium--one-quarter large--one-sixth" %}
   {% else %}
-    {% assign grid_item_width = "one-half medium--one-half large--one-half" %}
+    {% assign grid_item_width = "small--one-half medium--one-quarter large--one-sixth" %}
   {% endif %}
   {% comment %} Set item with to half if it isn't in a 3 row. {% endcomment %}
   {% include 'collection-grid-item' %}

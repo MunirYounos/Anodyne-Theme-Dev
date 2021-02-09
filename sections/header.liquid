@@ -297,14 +297,15 @@
                     </a>
                   </li>
                 {% endif %}
-
+    
                 <li class="site-nav__item site-nav__item--compressed has-mini__cart site-nav--has-dropdown">
                   <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
                     <span class="icon-fallback-text">
                       <span class="icon__shopping-bag" aria-hidden="true">{% render 'bag-svg' %}</span>
                       <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
                     </span>
-                    <span  class="cart__count cart-link__bubble{% if cart.item_count > 0  and cart.item_count < 10%} cart-link__bubble--visible {% elsif cart.item_count >= 10 %} cart-link__bubble--visible more-10 {% endif %}">
+                    <span v-if="cart" class="cart__count cart-link__bubble{% if cart.item_count > 0  and cart.item_count < 10%} cart-link__bubble--visible {% elsif cart.item_count >= 10 %} cart-link__bubble--visible more-10 {% endif %}">
+  
                      {{cart.item_count }}
                     </span>
                   </a>
@@ -312,7 +313,7 @@
                         {% render 'mini-cart' %}
                 
                 </li>
-
+    
               </ul>
               <!-- //site-nav -->
             </nav>

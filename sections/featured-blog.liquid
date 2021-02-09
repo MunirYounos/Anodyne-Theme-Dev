@@ -5,17 +5,17 @@
 
     {% case section.settings.post_limit %}
       {% when 3 %}
-        {%- assign width = 'small--one-whole medium--one-half large--one-third' -%}
+        {%- assign width = 'small--one-half medium--one-quarter large--one-sixth' -%}
       {% when 2 %}
-        {%- assign width = 'small--one-whole medium--one-half large--one-half' -%}
+        {%- assign width = 'small--one-half medium--one-quarter large--one-sixth' -%}
       {% when 1 %}
         {% if section.settings.blog_show_image %}
-          {%- assign width = 'small--one-whole medium--one-half large--one-half' -%}
+          {%- assign width = 'small--one-half medium--one-quarter large--one-sixth' -%}
         {% else %}
           {%- assign width = 'text-center large--four-fifths push--large--one-tenth' -%}
         {% endif %}
       {% else %}
-        {%- assign width = 'small--one-whole medium--one-half large--one-third' -%}
+        {%- assign width = 'small--one-half medium--one-quarter large--one-sixth' -%}
     {% endcase %}
 
     {% if section.settings.title != blank %}

@@ -164,7 +164,7 @@
                   <div class="radio-wrapper js product-form__item">
                     <label class="single-option-radio__label"
                       for="ProductSelect-option-{{ forloop.index0 }}">
-                      {{ option.name | escape }}
+                      {{ option.name | escape }} 
                     </label>
                     {% if section.settings.product_selector == 'radio' %}
                       <fieldset class="single-option-radio"
@@ -219,7 +219,7 @@
               {% if section.settings.quantity_enabled %}
               <div class="product-single__quantity">
                 <label for="Quantity" class="product-single__quantity-label js-quantity-selector">{{ 'products.product.quantity' | t }}</label>
-                <input type="number" v-model="form.quatity" hidden="hidden" id="Quantity"  name="quantity" value="1" min="1" class="js-quantity-selector vue__quantity" placeholder="1">
+                <input type="number" v-model="form.quantity" hidden="hidden" id="Quantity"  name="quantity" value="1" min="1" class="js-quantity-selector vue__quantity" placeholder="1">
               </div>
               {% endif %}
 

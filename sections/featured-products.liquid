@@ -47,7 +47,7 @@
 
         {% else %}
 
-          {% assign grid_item_width = 'medium--one-half large--one-third' %}
+          {% assign grid_item_width = 'large--one-sixth medium--one-quarter small--one-half' %}
           {% for product in collections[section.settings.home_featured_products].products %}
             {% include 'product-grid-item' %}
           {% endfor %}

@@ -1,6 +1,6 @@
 import { store } from "./../shared/cartData.js";
-
-if (document.querySelector('.mini-cart')) {
+let miniCart = document.querySelector('.mini-cart');
+if (miniCart && miniCart !== null) {
 
 
     let MiniCart = new Vue({
@@ -121,15 +121,6 @@ if (document.querySelector('.mini-cart')) {
                
 
             }
-
-         
-
-        },
-
-       
+        }
     });
-
-
-
-    
 }

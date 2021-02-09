@@ -127,7 +127,7 @@
 											</template>
   
 											<template v-else>
-												<span class="cart__price">${ item.original_line_price | money }</span>
+												<span class="cart__price">${ totalPrice(item) | money }</span>
 										</template>
                       
               
@@ -206,7 +206,7 @@
                   <p class="cart__subtotal">{{ 'cart.general.subtotal' | t }}</p>
                 </div>
                 <div class="grid__item one-half large--one-third">
-                  <p class="cart__subtotal">{{ cart.total_price | money }}</p>
+                  <p v-if="cart" class="cart__subtotal">${cart_total_price | money }</p>
                 </div>
               </div>
 

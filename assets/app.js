@@ -1870,8 +1870,7 @@ __webpack_require__(/*! ./components/miniCart.js */ "./src/js/components/miniCar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1879,6 +1878,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+var cartBubble = document.querySelector('.cart__count');
 var cart = document.querySelector('.cart');
 
 if (cart && cart !== null) {
@@ -1887,21 +1887,41 @@ if (cart && cart !== null) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        cart: null
+        cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
       };
     },
-    created: function created() {
-      this.getCart();
+    computed: {
+      cart_total_price: function cart_total_price() {
+        var total = 0;
+        this.cartData[0].items.forEach(function (item) {
+          total += item.quantity * item.price;
+        });
+        return total;
+      },
+      cartCount: function cartCount() {
+        var count = 0;
+        this.cartData[0].items.forEach(function (item) {
+          count += item.quantity;
+        });
+        return count;
+      },
+      cart: function cart() {
+        return this.cartData[0];
+      }
     },
     methods: {
+      totalPrice: function totalPrice(item) {
+        return item.price * item.quantity;
+      },
       updateCart: function updateCart() {
         var result = this.cart.items.reduce(function (accumulator, target) {
           return _objectSpread(_objectSpread({}, accumulator), {}, _defineProperty({}, target.variant_id, target.quantity));
         }, {});
         console.log(result);
-        axios__WEBPACK_IMPORTED_MODULE_0___default().post('/cart/update.js', {
+        axios.post('/cart/update.js', {
           updates: result
         }).then(function (response) {
+          _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData[0] = response.data;
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -1919,7 +1939,7 @@ if (cart && cart !== null) {
       getCart: function getCart() {
         var _this = this;
 
-        axios__WEBPACK_IMPORTED_MODULE_0___default().get('/cart.js').then(function (response) {
+        axios.get('/cart.js').then(function (response) {
           console.log(response);
           _this.cart = response.data;
         })["catch"](function (error) {
@@ -1932,7 +1952,7 @@ if (cart && cart !== null) {
         });
       },
       addToCart: function addToCart() {
-        axios__WEBPACK_IMPORTED_MODULE_0___default().post('/cart/add.js', this.form).then(function (response) {
+        axios.post('/cart/add.js', this.form).then(function (response) {
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -1964,8 +1984,9 @@ if (cart && cart !== null) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
 
+var miniCart = document.querySelector('.mini-cart');
 
-if (document.querySelector('.mini-cart')) {
+if (miniCart && miniCart !== null) {
   var MiniCart = new Vue({
     el: ".mini-cart",
     delimiters: ['${', '}'],
@@ -2079,7 +2100,11 @@ if (document.querySelector('.mini-cart')) {
 /*!******************************************!*\
   !*** ./src/js/components/productForm.js ***!
   \******************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
 
 var form = document.querySelector('.product-single__form');
 
@@ -2096,7 +2121,25 @@ if (form && form !== null) {
     },
     methods: {
       addToCart: function addToCart() {
+        var _this = this;
+
         axios.post('/cart/add.js', this.form).then(function (response) {
+          // add data to mini cart object
+          // check if product already exist
+          var found = _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData[0].items.find(function (product) {
+            return product.variant_id == response.data.variant_id;
+          });
+
+          if (found) {
+            found.quantity += parseInt(_this.form.quantity); // you can reset the quanity back to 1 if you want
+            // this.form.quantity = 1;
+          } else {
+            // add item at the start of array
+            _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData[0].items.unshift(response.data);
+          }
+
+          _this.openMiniCart();
+
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -2111,6 +2154,14 @@ if (form && form !== null) {
             text: 'Something went wrong sorry...'
           }).show();
         });
+      },
+      openMiniCart: function openMiniCart() {
+        // fix for boostrap dropdown javascript opening and closing
+        var dropDown = document.querySelector('.has-mini__cart');
+        dropDown.classList.add('nav-hover');
+        setTimeout(function () {
+          dropDown.classList.remove('nav-hover');
+        }, 3000);
       }
     }
   });
@@ -17526,18 +17577,6 @@ Vue.compile = compileToFunctions;
 /******/ 	// It's empty as some runtime module handles the default behavior
 /******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

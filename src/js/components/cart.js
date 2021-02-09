@@ -1,5 +1,6 @@
-import axios from "axios";
+import { store } from "./../shared/cartData.js";
 
+let cartBubble = document.querySelector('.cart__count');
 let cart = document.querySelector('.cart');
 if(cart && cart !== null ){
 	let productCart = new Vue({
@@ -7,14 +8,37 @@ if(cart && cart !== null ){
 		delimiters: ['${', '}'],
 		data(){
 			return{
-					cart: null
+					cartData: store.state.cartData,
+			}
+		},
+		computed:{
+			cart_total_price(){
+				let total = 0;
+				
+				this.cartData[0].items.forEach(item => {
+						total += item.quantity*item.price;
+				});
+
+				return total;
+		},
+		cartCount(){
+			let count = 0;
+			this.cartData[0].items.forEach(item => {
+				count += item.quantity;
+		});
+
+		return count;
+		},
+			cart(){
+				return this.cartData[0]
 			}
 		},
 
-		created(){
-			this.getCart();
-		},
 		methods: {
+
+			totalPrice(item){
+				return item.price * item.quantity;
+			},
 			updateCart(){
 				let result = this.cart.items.reduce(
 						 (accumulator, target) => ({ ...accumulator, [target.variant_id]: target.quantity }),
@@ -26,7 +50,8 @@ if(cart && cart !== null ){
 				axios.post('/cart/update.js', {updates : result} )
 						.then( (response) => {
 								
-	
+							store.state.cartData[0] = response.data;
+
 								new Noty({
 										type: 'success',
 										timeout: 3000,

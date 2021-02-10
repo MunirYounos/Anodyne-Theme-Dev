@@ -8,6 +8,8 @@ if(form && form !==null ){
 			return{
 				form: {
 					id: document.querySelector('.vue__id').value,
+					size: document.querySelector('.vue__size').value,
+					color: document.querySelector('.vue__color').value,
 					quantity:1,
 				}
 			}
@@ -16,10 +18,14 @@ if(form && form !==null ){
 			addToCart(){
 				axios.post('/cart/add.js', this.form)
 									.then((response) => {
-
+											
                         // add data to mini cart object
                             // check if product already exist
                             let found = store.state.cartData[0].items.find(product => product.variant_id == response.data.variant_id);
+														let stodid = store.state.cartData[0].items.find(product => product.variant_id);
+														if(stodid == response.data.variant_id){
+															return
+														}
                             if(found){
                                 found.quantity += parseInt(this.form.quantity);
                                 
@@ -34,7 +40,7 @@ if(form && form !==null ){
 
 										new Noty({
 											type: 'success',
-											timeout: 3000,
+											timeout: 2000,
 											layout: 'topRight',
 											text:'Product added to cart...'
 										}).show();
@@ -42,7 +48,7 @@ if(form && form !==null ){
 									.catch(function (error){
 										new Noty({
 											type: 'error',
-											timeout: 3000,
+											timeout: 2000,
 											layout: 'topRight',
 											text:'Something went wrong sorry...'
 										}).show();

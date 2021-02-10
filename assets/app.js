@@ -1898,13 +1898,6 @@ if (cart && cart !== null) {
         });
         return total;
       },
-      cartCount: function cartCount() {
-        var count = 0;
-        this.cartData[0].items.forEach(function (item) {
-          count += item.quantity;
-        });
-        return count;
-      },
       cart: function cart() {
         return this.cartData[0];
       }
@@ -1924,7 +1917,7 @@ if (cart && cart !== null) {
           _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData[0] = response.data;
           new Noty({
             type: 'success',
-            timeout: 3000,
+            timeout: 2000,
             layout: 'topRight',
             text: 'You updated products in your cart'
           }).show();
@@ -1945,24 +1938,7 @@ if (cart && cart !== null) {
         })["catch"](function (error) {
           new Noty({
             type: 'error',
-            timeout: 3000,
-            layout: 'centerRight',
-            text: 'Something went wrong sorry...'
-          }).show();
-        });
-      },
-      addToCart: function addToCart() {
-        axios.post('/cart/add.js', this.form).then(function (response) {
-          new Noty({
-            type: 'success',
-            timeout: 3000,
-            layout: 'centerRight',
-            text: 'Product added to cart...'
-          }).show();
-        })["catch"](function (error) {
-          new Noty({
-            type: 'error',
-            timeout: 3000,
+            timeout: 2000,
             layout: 'centerRight',
             text: 'Something went wrong sorry...'
           }).show();
@@ -2052,7 +2028,8 @@ if (miniCart && miniCart !== null) {
         }
 
         axios.post('/cart/change.js', data).then(function (response) {
-          // Find the current item and new item to compare the quanity
+          console.log(response); // Find the current item and new item to compare the quanity
+
           var currentItem = _this.cartData[0].items.find(function (product) {
             return product.variant_id == item.variant_id;
           });
@@ -2066,7 +2043,7 @@ if (miniCart && miniCart !== null) {
             if (quantity > 0 && currentItem.quantity == newItem.quantity) {
               new Noty({
                 type: 'warning',
-                timeout: 3000,
+                timeout: 2000,
                 layout: 'topRight',
                 text: 'No more in stock'
               }).show();
@@ -2075,7 +2052,7 @@ if (miniCart && miniCart !== null) {
               currentItem.quantity += quantity;
               new Noty({
                 type: 'success',
-                timeout: 3000,
+                timeout: 2000,
                 layout: 'topRight',
                 text: 'Your cart items updated'
               }).show();
@@ -2115,6 +2092,8 @@ if (form && form !== null) {
       return {
         form: {
           id: document.querySelector('.vue__id').value,
+          size: document.querySelector('.vue__size').value,
+          color: document.querySelector('.vue__color').value,
           quantity: 1
         }
       };
@@ -2129,6 +2108,13 @@ if (form && form !== null) {
           var found = _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData[0].items.find(function (product) {
             return product.variant_id == response.data.variant_id;
           });
+          var stodid = _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData[0].items.find(function (product) {
+            return product.variant_id;
+          });
+
+          if (stodid == response.data.variant_id) {
+            return;
+          }
 
           if (found) {
             found.quantity += parseInt(_this.form.quantity); // you can reset the quanity back to 1 if you want
@@ -2142,14 +2128,14 @@ if (form && form !== null) {
 
           new Noty({
             type: 'success',
-            timeout: 3000,
+            timeout: 2000,
             layout: 'topRight',
             text: 'Product added to cart...'
           }).show();
         })["catch"](function (error) {
           new Noty({
             type: 'error',
-            timeout: 3000,
+            timeout: 2000,
             layout: 'topRight',
             text: 'Something went wrong sorry...'
           }).show();

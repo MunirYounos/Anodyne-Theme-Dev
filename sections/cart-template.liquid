@@ -5,7 +5,7 @@
         <h1>{{ 'cart.general.title' | t }}</h1>
       </header>
 
-      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart">
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart cartForm">
 
         <div class="cart__row medium-down--hide cart__header-labels">
           <div class="grid--full">
@@ -49,18 +49,16 @@
                       <a :href="item.url" class="h4 cart__product-name">
                         ${ item.product_title }
                       </a>
-                      <template v-if="!item.product_has_only_default_variant">
-                          <p class="cart__product-meta">
+                   
+                          <p  class="cart__product-meta">
                             ${ item.variant_title}
                           </p>
-                      </template>
+            
     
-                      {% if settings.product_vendor_enable %}
-                        <p class="cart__product-meta">${ item.vendor}</p>
-                      {% endif %}
-											<template v-if="!item.selling_plan_allocation ">
-                        <p class="cart__product-meta">{{ item.selling_plan_allocation.selling_plan.name }}</p>
-										</template>
+ 
+									
+              
+			
     
 											<template v-if="item.properties">
 												<template v-for="p in item.properties">
@@ -84,8 +82,8 @@
 
 
 
-                      <p class="cart__product-meta">
-                        <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0">
+                      <p @click="remove(item)"  class="cart__product-meta">
+                        <a>
                           {{ 'cart.general.remove' | t }}
                         </a>
                       </p>

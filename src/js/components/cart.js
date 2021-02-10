@@ -21,14 +21,6 @@ if(cart && cart !== null ){
 
 				return total;
 		},
-		cartCount(){
-			let count = 0;
-			this.cartData[0].items.forEach(item => {
-				count += item.quantity;
-		});
-
-		return count;
-		},
 			cart(){
 				return this.cartData[0]
 			}
@@ -54,7 +46,7 @@ if(cart && cart !== null ){
 
 								new Noty({
 										type: 'success',
-										timeout: 3000,
+										timeout: 2000,
 										layout: 'topRight',
 										text: 'You updated products in your cart'
 								}).show();
@@ -79,31 +71,13 @@ if(cart && cart !== null ){
 				.catch(error =>{
 					new Noty({
 						type: 'error',
-						timeout: 3000,
+						timeout: 2000,
 						layout: 'centerRight',
 						text:'Something went wrong sorry...'
 					}).show();
 				});
 			},
-			addToCart(){
-				axios.post('/cart/add.js', this.form)
-									.then(function(response){
-										new Noty({
-											type: 'success',
-											timeout: 3000,
-											layout: 'centerRight',
-											text:'Product added to cart...'
-										}).show();
-									})
-									.catch(function (error){
-										new Noty({
-											type: 'error',
-											timeout: 3000,
-											layout: 'centerRight',
-											text:'Something went wrong sorry...'
-										}).show();
-									})
-			}
+
 		}
 	
 	});

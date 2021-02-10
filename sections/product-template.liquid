@@ -177,19 +177,21 @@
                               {% assign variant_label_state = false %}
                             {% endunless %}
                           {% endif %}
-                          <input type="radio"
+                          <input {% if option_index == 2 %} v-model="form.color" {% else %} v-model="form.size" {% endif %} type="radio"
                             {% if option.selected_value == value %} checked="checked"{% endif %}
                             {% unless variant_label_state %} disabled="disabled"{% endunless %}
                             value="{{ value | escape }}"
                             data-index="option{{ option_index }}"
                             name="option{{ option.position }}"
-                            class="single-option-selector__radio{% unless variant_label_state %} disabled{% endunless %}"
+                            class="single-option-selector__radio {% if option_index == 2 %} vue__color {% else %} vue__size {% endif %}{% unless variant_label_state %} disabled{% endunless %} 
+                         
+                            "
                             id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
                           <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"{% unless variant_label_state %} class="disabled"{% endunless %}>{{ value | escape }}</label>
                         {% endfor %}
                       </fieldset>
                     {% else %}
-                      <select class="single-option-selector__radio single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }} " data-index="option{{ forloop.index }}">
+                      <select  v-model="form.id"  class="single-option-selector__radio single-option-selector-{{ section.id }} product-form__input " id="SingleOptionSelector-{{ forloop.index0 }} " data-index="option{{ forloop.index }}">
                         {% for value in option.values %}
                           <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value | escape }}</option>
                         {% endfor %}
@@ -199,13 +201,14 @@
                 {% endfor %}
               {% endunless %}
 
-              <select v-model="form.id"  name="id" id="ProductSelect--{{ section.id }}" class="product-single__variants vue__id no-js">
+              <select  name="id" id="ProductSelect--{{ section.id }}" class="product-single__variants vue__id  no-js">
                 {% for variant in product.variants %}
                   {% if variant.available %}
                     <option {% if variant == product.selected_or_first_available_variant %}
                       selected="selected" {% endif %}
                       data-sku="{{ variant.sku }}"
                       value="{{ variant.id }}">
+                     
                       {{ variant.title }} - {{ variant.price | money_with_currency }}
                     </option>
                   {% else %}

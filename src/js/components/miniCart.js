@@ -25,7 +25,7 @@ if (miniCart && miniCart !== null) {
         },
 
         methods:{
-						//Cart total items
+			//Cart total items
             // Remove item from cart
             remove(item){
                 let found = this.cart.items.find(product => product.variant_id == item.variant_id);
@@ -74,11 +74,10 @@ if (miniCart && miniCart !== null) {
 
                 axios.post('/cart/change.js', data )
                     .then( (response) => {
-
+                        console.log(response);
                         // Find the current item and new item to compare the quanity
                         let currentItem = this.cartData[0].items.find(product => product.variant_id == item.variant_id);
                         let newItem = response.data.items.find(product => product.variant_id == item.variant_id);
-
                         // If item exist
                         if (currentItem) {
                             // check if item quantity changed. Only change.js can detect this on response
@@ -86,7 +85,7 @@ if (miniCart && miniCart !== null) {
 
                                 new Noty({
                                     type: 'warning',
-                                    timeout: 3000,
+                                    timeout: 2000,
                                     layout: 'topRight',
                                     text: 'No more in stock'
                                 }).show();
@@ -96,7 +95,7 @@ if (miniCart && miniCart !== null) {
                                 currentItem.quantity += quantity;
                                  new Noty({
                                     type: 'success',
-                                    timeout: 3000,
+                                    timeout: 2000,
                                     layout: 'topRight',
                                     text: 'Your cart items updated'
                                 }).show();

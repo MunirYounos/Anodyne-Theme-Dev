@@ -10,7 +10,7 @@
   Set the default grid_item_width if no variable is set
 {% endcomment %}
 {% unless grid_item_width %}
-  {% assign grid_item_width = 'medium--one-half large--one-third' %}
+  {% assign grid_item_width = 'large--one-sixth medium--one-quarter small--one-half' %}
 {% endunless %}
 
 {% comment %}
@@ -77,8 +77,10 @@
     {% endif %}
     <div class="collection-grid__item-title--wrapper">
       <span class="collection-grid__item-title">
-        {{ collection_title }}
+        {{ collection_title }} 
       </span>
+
     </div>
+
   </a>
 </div>

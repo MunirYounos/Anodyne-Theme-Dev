@@ -344,3 +344,13 @@
   font-size: 0.675rem;
   padding: 0.2rem 0.6rem;
 }
+
+.product-single__media-group-wrapper {
+  position: relative;
+}
+.product-single__media-group-wrapper .product-single__thumbnail {
+  min-width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+}

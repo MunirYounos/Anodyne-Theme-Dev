@@ -85,7 +85,7 @@
             <ul class="product-single__thumbnails small--hide grid-uniform" data-product-thumbnails>
               {% for media in product.media %}
                 {% if product.media.size > 1 %}
-                  <li class="grid__item medium--one-third large--one-quarter product-single__media-wrapper">
+                  <li data-thumbnail-color="{{media.alt}}" class="grid__item medium--one-third large--one-quarter product-single__media-wrapper">
                     {%- capture thumbnail_alt -%}
                       {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
                         {{ 'products.product.video_thumbnail_alt' | t: imageAlt: media.alt | escape }}
@@ -164,7 +164,7 @@
                   <div class="radio-wrapper js product-form__item">
                     <label class="single-option-radio__label"
                       for="ProductSelect-option-{{ forloop.index0 }}">
-                      {{ option.name | escape }} 
+                      {{ option.name | escape }}
                     </label>
                     {% if section.settings.product_selector == 'radio' %}
                       <fieldset class="single-option-radio"
@@ -177,21 +177,19 @@
                               {% assign variant_label_state = false %}
                             {% endunless %}
                           {% endif %}
-                          <input {% if option_index == 2 %} v-model="form.color" {% else %} v-model="form.size" {% endif %} type="radio"
+                          <input type="radio"
                             {% if option.selected_value == value %} checked="checked"{% endif %}
                             {% unless variant_label_state %} disabled="disabled"{% endunless %}
                             value="{{ value | escape }}"
                             data-index="option{{ option_index }}"
                             name="option{{ option.position }}"
-                            class="single-option-selector__radio {% if option_index == 2 %} vue__color {% else %} vue__size {% endif %}{% unless variant_label_state %} disabled{% endunless %} 
-                         
-                            "
+                            class="single-option-selector__radio{% unless variant_label_state %} disabled{% endunless %}"
                             id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
                           <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"{% unless variant_label_state %} class="disabled"{% endunless %}>{{ value | escape }}</label>
                         {% endfor %}
                       </fieldset>
                     {% else %}
-                      <select  v-model="form.id"  class="single-option-selector__radio single-option-selector-{{ section.id }} product-form__input " id="SingleOptionSelector-{{ forloop.index0 }} " data-index="option{{ forloop.index }}">
+                      <select class="single-option-selector__radio single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
                         {% for value in option.values %}
                           <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value | escape }}</option>
                         {% endfor %}
@@ -201,14 +199,13 @@
                 {% endfor %}
               {% endunless %}
 
-              <select  name="id" id="ProductSelect--{{ section.id }}" class="product-single__variants vue__id  no-js">
+              <select name="id" id="ProductSelect--{{ section.id }}" class="product-single__variants no-js">
                 {% for variant in product.variants %}
                   {% if variant.available %}
                     <option {% if variant == product.selected_or_first_available_variant %}
                       selected="selected" {% endif %}
                       data-sku="{{ variant.sku }}"
                       value="{{ variant.id }}">
-                     
                       {{ variant.title }} - {{ variant.price | money_with_currency }}
                     </option>
                   {% else %}
@@ -222,12 +219,12 @@
               {% if section.settings.quantity_enabled %}
               <div class="product-single__quantity">
                 <label for="Quantity" class="product-single__quantity-label js-quantity-selector">{{ 'products.product.quantity' | t }}</label>
-                <input type="number" v-model="form.quantity" hidden="hidden" id="Quantity"  name="quantity" value="1" min="1" class="js-quantity-selector vue__quantity" placeholder="1">
+                <input type="number" hidden="hidden" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector">
               </div>
               {% endif %}
 
               <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
-                <button type="button" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button and product.selling_plan_groups == empty %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}   @click="addToCart" >
+                <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button and product.selling_plan_groups == empty %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                   <span class="btn__text">
                     {% if current_variant.available %}
                       {{ 'products.product.add_to_cart' | t }}
@@ -235,7 +232,6 @@
                       {{ 'products.product.sold_out' | t }}
                     {% endif %}
                   </span>
-                
                 </button>
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}

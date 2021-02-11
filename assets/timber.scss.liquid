@@ -301,6 +301,7 @@ $siteWidth: 1400px;
 $small: 590px;
 $medium: 768px;
 $large: 769px;
+$large2: 968px;
 $xlarge: $siteWidth + $viewportIncrement;
 
 $postSmall: $small + $viewportIncrement;
@@ -530,10 +531,6 @@ body {
   max-width: $siteWidth;
   margin: 0 auto;
   padding: 0 ($gutter / 2);
-
-  @include at-query ($min, $postSmall) {
-    padding: 0 $gutter;
-  }
 }
 
 .main-content {
@@ -825,6 +822,7 @@ $pull:               false;
   clear: both;
 }
 
+
 $class-type: unquote(".");
 
 @if $use-silent-classes == true {
@@ -893,7 +891,7 @@ $class-type: unquote(".");
   }
 
   @include at-query($min, $postSmall) {
-    padding-left: $gridGutter;
+    padding-left: $gridGutter / 3;
   }
 }
 
@@ -2476,7 +2474,7 @@ $socialIconFontStack: 'icons';
 
 /*================ Module | Section Headers ================*/
 .section-header {
-  margin: $gutter 0 $gutter / 2 0;
+  margin: $gutter * 2  0  $gutter  0;
 
   .section-header__title {
     letter-spacing: 1px;
@@ -2783,9 +2781,9 @@ $socialIconFontStack: 'icons';
 .cart-link__bubble--visible {
   display: block;
   position: absolute;
-  top: 6px;
-  right: -12px;
-  padding:1px 8px;
+  top: 20px;
+  right:0;
+  padding:8px;
   color:$colorBody;
   // width: 20px;
   // height: 20px;
@@ -3325,6 +3323,8 @@ $socialIconFontStack: 'icons';
   img {
     width: auto;
     overflow: hidden;
+    width:120px;
+    object-fit: cover;
   }
 }
 
@@ -3422,7 +3422,7 @@ $socialIconFontStack: 'icons';
   }
 }
 
-@include at-query($min, $postSmall) {
+@include at-query($min, $small) {
   .product-single__media-flex-wrapper {
     margin-bottom: $gutter / 2;
   }
@@ -3433,7 +3433,19 @@ $socialIconFontStack: 'icons';
     }
 
     & ~ .product-single__thumbnails {
-      margin-top: $gutter / 2;
+      position:absolute;
+      top:0;
+      right:0;
+      display: flex;
+      flex-direction:column;
+      padding:0;
+      margin: 0 -5rem 0 0;
+      @include at-query($min, $medium){
+        margin: 0 -2rem 0 0;
+      }
+      @include at-query($min, $large2){
+        margin: 0 5rem 0 0;
+      }
     }
   }
 }

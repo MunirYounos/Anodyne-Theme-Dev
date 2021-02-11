@@ -157,7 +157,7 @@
   font-weight: $accentFontWeight;
   font-style: $accentFontStyle;
   {% if settings.type_accent_spacing %}
-    letter-spacing: 0.1em;
+    letter-spacing: 0.3px;
   {% endif %}
   {% if settings.type_accent_transform %}
     text-transform: uppercase;
@@ -1190,8 +1190,9 @@ blockquote {
 
 .collection-grid__item-title {
   @include accentFontStack;
-  font-size: em(15px);
+  font-size: em(16px);
   line-height: 1.1;
+  font-weight: bold;
 
   @include at-query($min, $postSmall) {
     font-size: em(18px);
@@ -1507,6 +1508,9 @@ input[type="image"] {
 
   @include at-query($min, $postSmall) {
     margin-bottom: $gutter;
+    &:not(:first-of-type){
+      padding-left: $gutter / 2.5;
+    }
   }
 }
 
@@ -2945,6 +2949,7 @@ $slick-dot-character: '\2022';
       fill: lighten($colorNavText, 5%);
       height: 24px;
       width: 24px;
+      margin-bottom:-3px;
     }
   }
 /*================ Dropdown Animation ================*/
@@ -3005,11 +3010,11 @@ $slick-dot-character: '\2022';
 }
 
 .site-nav__dropdown-link {
-  @include bodyFontItalic;
+  @include accentFontStack;
   display: block;
   white-space: nowrap;
   padding: 5px 15px;
-  font-size: em(16px);
+  font-size: em(14px);
   .site-nav--has-grandchildren & {
     padding-right: $gutter * 1.5;
   }
@@ -3307,7 +3312,7 @@ button.mfp-arrow {
   display: block;
   width: 100%;
   background-color: $colorProductBackground;
-  @include transition(opacity 0.4s ease-out);
+  @include transition(transform 0.90s ease);
 
   .grid-collage & {
     padding: 0 20px;
@@ -3315,8 +3320,10 @@ button.mfp-arrow {
 
   &:hover,
   &:focus {
-    opacity: 0.9;
-    @include transition(opacity 0.15s ease-in);
+    .product--image {
+      @include transition(transform 0.90s ease);
+      transform: scale(1.1);
+    }
   }
 
   .grid-uniform & {
@@ -3397,8 +3404,9 @@ button.mfp-arrow {
 }
 
 .grid-product__title {
-  @include bodyFontItalic;
-  font-size: em(floor($baseFontSize * 1.25));  //20px based on 16px base font size
+  @include accentFontStack;
+  font-size: em(14px);
+  font-weight: bold;
 }
 
 .grid-product__vendor {
@@ -3410,7 +3418,9 @@ button.mfp-arrow {
 
 .grid-product__price {
   @include accentFontStack;
-  font-size: em(14px);
+  font-size: em(18px);
+  font-weight:900;
+  color: $colorPrimary;
 }
 
 .grid-product__price-min {
@@ -3430,9 +3440,16 @@ button.mfp-arrow {
   top: 0;
   left: 0;
   text-align: left;
-  background-color: $colorSaleTag;
-  border-bottom-right-radius: 50px;
-
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height:40px;
+    background-color:$colorSaleTag; 
+    z-index: 9;
+  }
   p {
     letter-spacing: 1px;
   }
@@ -3449,7 +3466,7 @@ button.mfp-arrow {
 }
 
 .grid-product__on-sale {
-  color: lighten($colorTextBody, 90%);
+  color: $colorTextBody;
 }
 
 @include keyframes(placeholder-background-loading) {
@@ -3647,10 +3664,10 @@ button.mfp-arrow {
   cursor: pointer;
 
   .collection-grid__item-title {
-    display: table-cell;
-    vertical-align: bottom;
-    margin: 0 auto;
-    padding-bottom: 3rem;
+    position: absolute;
+    top:60%;
+    left:em(10px);
+    transform: translateY(-40%);
   }
 }
 

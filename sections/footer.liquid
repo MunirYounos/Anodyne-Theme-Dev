@@ -253,6 +253,9 @@
             </div>
           {%- endif -%}
         {%- endform -%}
+
+        <p class="site-footer__copyright-content">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}<br>{{ powered_by_link }}</p>
+
         {%- if section.settings.show_payment_icons -%}
           {%- unless shop.enabled_payment_types == empty -%}
             <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
@@ -268,8 +271,6 @@
       </div>
     </div>
 
-    <p class="site-footer__copyright-content text-center">&copy; {{ 'now' | date: '%Y' }}  {{ shop.name | link_to: routes.root_url }}</p>
- 
   </div>
 </footer>
 

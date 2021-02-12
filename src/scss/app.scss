@@ -1,4 +1,5 @@
-@import "~noty/src/noty.scss";
-@import "./components/noty_flat_theme";
-@import "./components/mini-cart";
+
+@import "./vars";
+@import "./mixins";
 @import "./components/feature-collection";
+@import "./components/featured-products";

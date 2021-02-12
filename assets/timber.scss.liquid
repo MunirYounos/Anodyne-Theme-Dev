@@ -531,6 +531,9 @@ body {
   max-width: $siteWidth;
   margin: 0 auto;
   padding: 0 ($gutter / 2);
+  @include at-query($min, $small) {
+    padding: 0 ($gutter / 2) 0 $gutter ;
+  }
 }
 
 .main-content {
@@ -2791,8 +2794,8 @@ $socialIconFontStack: 'icons';
   border-radius: 50%;
 
   @include at-query($max, $medium) {
-    top: 0px;
-    right: 2px;
+    top: 12px;
+    right: 6px;
   }
   &.more-10{
     padding:3px 4px;
@@ -2984,7 +2987,6 @@ $socialIconFontStack: 'icons';
 }
 
 .product-single__meta--wrapper {
-  padding-left: 45px;
   padding-right: 25px;
 }
 
@@ -3204,6 +3206,9 @@ $socialIconFontStack: 'icons';
 
   li {
     margin-bottom: $gutter / 2;
+    @include at-query($min, $small){
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -3323,7 +3328,7 @@ $socialIconFontStack: 'icons';
   img {
     width: auto;
     overflow: hidden;
-    width:120px;
+    width:90px;
     object-fit: cover;
   }
 }
@@ -3339,7 +3344,7 @@ $socialIconFontStack: 'icons';
   border: 2px solid rgba($colorHeadings, 0.2);
 
   &.active-thumb {
-    border-color: $colorHeadings;
+    border-color: $colorPrimary;
   }
 }
 
@@ -3439,12 +3444,15 @@ $socialIconFontStack: 'icons';
       display: flex;
       flex-direction:column;
       padding:0;
-      margin: 0 -5rem 0 0;
-      @include at-query($min, $medium){
-        margin: 0 -2rem 0 0;
+      margin:0;
+      @include at-query($min, $large){
+        margin-right:-2rem;
       }
       @include at-query($min, $large2){
-        margin: 0 5rem 0 0;
+        margin-right:0;
+      }
+      @include at-query($min, 1180px){
+        margin-right:5rem;
       }
     }
   }

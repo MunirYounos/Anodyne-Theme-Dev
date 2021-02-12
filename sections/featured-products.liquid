@@ -1,4 +1,4 @@
-<div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
+<div id="CollectionSection " class="collection-section {% if section.settings.show_background == true %}dark{%endif%}"  data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
   <div class="wrapper">
     {% if section.settings.title != blank %}
       <div class="section-header">
@@ -244,6 +244,22 @@
           }
         }
       ]
+    },
+    {
+      "type": "header",
+      "content": {
+        "da": "Baggrunds farve valg",
+        "en": "background color selection bar"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": {
+        "da": "Vis baggrunds farve",
+        "en": "Show background color on sections"
+      },
+      "default": false
     }
   ],
   "presets": [

@@ -1,0 +1,16 @@
+.dark{
+		background-color: lighten($dark, 93%);
+		padding:0.4rem 0 2rem 0;
+		margin: 5rem 0 1rem 0;
+}
+.usp-icons{
+	text-align: center;
+		@include mq($sm){
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mq($md){
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+		}
+}

@@ -1,0 +1,10 @@
+@mixin  mq($bp) {
+	@media screen and (min-width: $bp){
+		@content;
+	}
+}
+@mixin mqx($bp) {
+	@media screen and (max-width: $bp){
+		@content;
+	}
+}

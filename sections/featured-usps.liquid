@@ -1,0 +1,74 @@
+<div data-section-id="{{ section.id }}" data-section-type="featured-usps">
+  <div class="wrapper">
+    {% if section.settings.section_title != blank %}
+      <div class="section-header">
+        <h2 class="h1 section-header__title newsletter__title">{{ section.settings.section_title | escape }}</h2>
+        <hr class="hr--small">
+      </div>
+    {% endif %}
+		<div class="usp-icons">
+			{% for block in section.blocks%}
+				<div class="usp-icons__grid">
+					<div class="usp-icons__icon">
+						<img src="{{ block.settings.image_icon | img_url }}" alt="{{block.settings.icon_title}}">
+					</div>
+					<div class="usp-icons__content">
+						<h4 class="ups_title">{{block.settings.icon_title}}</h4>
+						<p class="usp_description">{{block.settings.icon_description}}</p>
+					</div>
+				</div>
+			{% endfor%}
+		</div>
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": {
+    "da": "RTF",
+    "en": "Front Page USPs"
+
+  },
+  "class": "index-usp usp-wrapper",
+	"name": "Heading",
+	"settings": [ 
+		{
+			"type": "text",
+			"id": "section_title",
+			"label": "Icon Heading",
+	"default": "Add a main title for Icons"
+		}
+],
+"name": "USP ICONS",
+
+"blocks": [
+		{
+			"type": "text",
+			"name": "Product",
+			"settings": [
+				{
+						"type": "text",
+						"id": "icon_title",
+						"label": "Icon title",
+						"default": "Enter a title for your Icon"
+				},
+				{
+					"type": "text",
+					"id": "icon_description",
+					"label": "Icon description",
+					"default": "Enter icon description"
+			},
+				{
+					"type": "image_picker",
+					"id": "image_icon",
+					"label": "pick an icon"
+				}
+				
+				
+			]
+		}
+	]
+}
+{% endschema %}

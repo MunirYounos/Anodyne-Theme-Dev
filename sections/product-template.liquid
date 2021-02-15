@@ -20,8 +20,8 @@
     {%- assign first_media = true -%}
 
     <div class="grid product-single">
-      <div class="grid__item large--seven-twelfths medium--seven-twelfths text-center">
-        <div id="ProductMediaGroup-{{ section.id }}" class="product-single__media-group-wrapper" data-product-single-media-group-wrapper>
+      <div class="grid__item large--seven-twelfths medium--seven-twelfths">
+        <div id="ProductMediaGroup-{{ section.id }}" class="product-single__media-group-wrapper" data-product-single-media-group-wrapper {% if section.settings.angled_background != blank %}style="background-color:{{section.settings.angled_background}}" {% endif%}>
           <div class="product-single__media-group{% unless stacked %} product-single__media-group--single-xr{% endunless %}" data-product-single-media-group>
             {%- assign enable_image_zoom = section.settings.enable_image_zoom -%}
             {% assign height = 850 %}
@@ -82,6 +82,7 @@
           {%- endif -%}
 
           {% unless stacked %}
+       
             <ul class="product-single__thumbnails small--hide grid-uniform" data-product-thumbnails>
               {% for media in product.media %}
                 {% if product.media.size > 1 %}
@@ -108,6 +109,7 @@
                 {% endif %}
               {% endfor %}
             </ul>
+     
           {% endunless %}
           <div class="slick__controls slick-slider">
             <button class="slick__arrow slick__arrow--previous" aria-label="{{ 'home_page.slideshow.previous_slide' | t }}" data-slick-previous>
@@ -146,9 +148,11 @@
                 {%- endif -%}
               </div>
             {%- endif -%}
-
-            <hr class="hr--small">
-
+          
+            <div class="product-single__description rte" itemprop="description">
+              {{ product.description }}
+            </div>
+        
             <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
             <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
@@ -241,9 +245,7 @@
 
           </div>
 
-          <div class="product-single__description rte" itemprop="description">
-            {{ product.description }}
-          </div>
+
 
           {% if section.settings.social_sharing_products %}
             {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
@@ -261,7 +263,9 @@
   </script>
 {% endunless %}
 
-
+<div class="product-details" style="padding:5rem 0; ">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio impedit quam eos!
+</div>
 
 {% schema %}
 {
@@ -822,6 +826,12 @@
         "zh-TW": "啟用影片循環功能"
       },
       "default": false
+    },
+    {
+      "type": "color",
+      "id": "angled_background",
+      "label": "Single product angle background.",
+      "default": "#f7f7f7"
     }
   ]
 }

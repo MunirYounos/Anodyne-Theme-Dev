@@ -4,13 +4,19 @@
 		margin: 5rem 0 1rem 0;
 }
 .usp-icons{
-	text-align: center;
-		@include mq($sm){
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-		}
+	margin:4rem 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
 		@include mq($md){
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
+		}
+		&__content{
+			padding-left:1.3rem;
+		}
+		&__title{
+			font-size: 0.95rem;
+			font-weight: 900;
 		}
 }

@@ -297,7 +297,7 @@ $max: max-width;
   border-radius: $unit;
 }
 $viewportIncrement: 1px;
-$siteWidth: 1400px;
+$siteWidth: 1380px;
 $small: 590px;
 $medium: 768px;
 $large: 769px;
@@ -3092,7 +3092,6 @@ $socialIconFontStack: 'icons';
   text-align: left;
   @include at-query($min, $large){
     margin:0;
-    padding-left:5px;
   }
   iframe,
   model-viewer,
@@ -3330,6 +3329,9 @@ $socialIconFontStack: 'icons';
     overflow: hidden;
     width:90px;
     object-fit: cover;
+    @include at-query($min, $xlarge){
+      transform: rotate(-10deg);
+    }
   }
 }
 
@@ -3341,7 +3343,7 @@ $socialIconFontStack: 'icons';
 
 .product-single__thumbnail {
   display: block;
-  border: 2px solid rgba($colorHeadings, 0.2);
+  border: 6px solid lighten($colorHeadings, 50%);
 
   &.active-thumb {
     border-color: $colorPrimary;
@@ -3439,20 +3441,20 @@ $socialIconFontStack: 'icons';
 
     & ~ .product-single__thumbnails {
       position:absolute;
-      top:0;
-      right:0;
+      top:50%;
+      right:1rem;
       display: flex;
       flex-direction:column;
       padding:0;
       margin:0;
+      z-index: 9;
+      transform: translateY(-50%);
       @include at-query($min, $large){
-        margin-right:-2rem;
+        right: -1rem;
       }
-      @include at-query($min, $large2){
-        margin-right:0;
-      }
-      @include at-query($min, 1180px){
-        margin-right:5rem;
+      @include at-query($min, $xlarge){
+        right:1.5rem;
+        transform: translateY(-50%) rotate(10deg);
       }
     }
   }

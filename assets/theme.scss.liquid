@@ -3113,7 +3113,7 @@ $slick-dot-character: '\2022';
     font-size: em(13px);
     font-style: normal;
     background-color: $colorBody;
-    border: 1px solid $colorBody;
+    border: 2px solid  adaptive-color($colorBody, 5%);
     color: $colorHeadings;
 
     &.disabled:before {
@@ -3136,7 +3136,7 @@ $slick-dot-character: '\2022';
 
   //style selected radio button's label
   input[type='radio']:checked + label {
-    border-color: $colorHeadings;
+    border-color: $colorPrimary;
   }
 
   //style label on input focus

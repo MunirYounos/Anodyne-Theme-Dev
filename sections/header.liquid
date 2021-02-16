@@ -307,6 +307,17 @@
                     <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
                   </a>
                 </li>
+                <li class="site-nav__item site-nav--has-dropdown">
+                  <a href="" class="site-nav__link">
+                    <ul class="site-nav__dropdown">
+                      <li>
+                        <a href="" class="site-nav__dropdown-link">
+                          {% render 'cart-test'  %}
+                        </a>
+                      </li>
+                    </ul>
+                  </a>
+                </li>
               </ul>
               <!-- //site-nav -->
             </nav>

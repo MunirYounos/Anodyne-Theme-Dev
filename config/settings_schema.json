@@ -1,2162 +1,1355 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Anodyne-Theme-dev",
-    "theme_author": "Shopify",
-    "theme_version": "17.2.2",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/using-themes\/themes-by-shopify\/brooklyn",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_name": "Anodyne-zip",
+    "theme_author": "Apollo",
+    "theme_version": "Free",
+    "theme_documentation_url": "https://gumroad.com/l/pNfB/sale",
+    "theme_support_url": "https://gumroad.com/l/pNfB/sale"
   },
   {
-    "name": {
-      "cs": "Barvy",
-      "da": "Farver",
-      "de": "Farben",
-      "en": "Colors",
-      "es": "Colores",
-      "fi": "Värit",
-      "fr": "Couleurs",
-      "it": "Colori",
-      "ja": "色",
-      "ko": "색상",
-      "nb": "Farger",
-      "nl": "Kleuren",
-      "pl": "Kolory",
-      "pt-BR": "Cores",
-      "pt-PT": "Cores",
-      "sv": "Färger",
-      "th": "สี",
-      "tr": "Renkler",
-      "vi": "Màu",
-      "zh-CN": "颜色",
-      "zh-TW": "色彩"
-    },
+    "name": "Unlock all features 🔑",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "🔑 [ Click here to get the premium theme. Special discount only applies to customers who have used free version.](https://gumroad.com/l/pNfB/sale)"
+      }
+    ]
+  },
+  {
+    "name": "Select layout 🕹️",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "🔒 [Multiple layouts available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "select",
+        "id": "header",
+        "label": "Header",
+        "default": "header-1",
+        "options": [
+          {
+            "value": "header-1",
+            "label": "Header 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "slideshow",
+        "label": "Slideshow",
+        "default": "slideshow-1",
+        "options": [
+          {
+            "value": "slideshow-1",
+            "label": "Slideshow 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "footer",
+        "label": "Footer",
+        "default": "footer-1",
+        "options": [
+          {
+            "value": "footer-1",
+            "label": "Footer 1"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Template"
+      },
+      {
+        "type": "select",
+        "id": "productpage",
+        "label": "Product page",
+        "info": "Apply for all products",
+        "default": "product-1",
+        "options": [
+          {
+            "value": "product-1",
+            "label": "Template 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collectionpage",
+        "label": "Collection page",
+        "info": "Apply for all collections",
+        "default": "collection-1",
+        "options": [
+          {
+            "value": "collection-1",
+            "label": "Template 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "blogpage",
+        "label": "Blog page",
+        "default": "blog-1",
+        "options": [
+          {
+            "value": "blog-1",
+            "label": "Template 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "articlepage",
+        "label": "Article page",
+        "default": "article-1",
+        "options": [
+          {
+            "value": "article-1",
+            "label": "Template 1"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Items"
+      },
+      {
+        "type": "select",
+        "id": "productgrid",
+        "label": "Product grid",
+        "default": "product-1",
+        "options": [
+          {
+            "value": "product-1",
+            "label": "Layout 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "sectionheading",
+        "label": "Section heading",
+        "default": "heading-0",
+        "options": [
+          {
+            "value": "heading-0",
+            "label": "Default"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collectiongrid",
+        "label": "Collection grid",
+        "default": "collection-1",
+        "options": [
+          {
+            "value": "collection-1",
+            "label": "Layout 1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "bloggrid",
+        "label": "Blog post",
+        "default": "blog-1",
+        "options": [
+          {
+            "value": "blog-1",
+            "label": "Layout 1"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Other"
+      },
+      {
+        "type": "select",
+        "id": "loading",
+        "label": "Loading effect",
+        "default": "grow",
+        "options": [
+          {
+            "value": "border",
+            "label": "Border"
+          },
+          {
+            "value": "grow",
+            "label": "Grow"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "loading_color",
+        "label": "Loading color",
+        "default": "#6c757d"
+      }
+    ]
+  },
+  {
+    "name": "General settings",
     "settings": [
       {
         "type": "header",
-        "content": {
-          "cs": "Obecné",
-          "da": "Generelt",
-          "de": "Allgemein",
-          "en": "General",
-          "es": "General",
-          "fi": "Yleistä",
-          "fr": "Menu général",
-          "it": "Generali",
-          "ja": "一般設定",
-          "ko": "일반",
-          "nb": "Generelt",
-          "nl": "Algemeen",
-          "pl": "Ogólne",
-          "pt-BR": "Geral",
-          "pt-PT": "Geral",
-          "sv": "Allmänt",
-          "th": "ทั่วไป",
-          "tr": "Genel",
-          "vi": "Tổng quan",
-          "zh-CN": "通用",
-          "zh-TW": "一般"
-        }
+        "content": "Right to left"
       },
       {
-        "type": "color",
-        "id": "color_body_bg",
-        "label": {
-          "cs": "Pozadí",
-          "da": "Baggrund",
-          "de": "Hintergrund",
-          "en": "Background",
-          "es": "Fondo",
-          "fi": "Tausta",
-          "fr": "Arrière-plan",
-          "it": "Sfondo",
-          "ja": "背景",
-          "ko": "배경",
-          "nb": "Bakgrunn",
-          "nl": "Achtergrond",
-          "pl": "Tło",
-          "pt-BR": "Plano de fundo",
-          "pt-PT": "Fundo",
-          "sv": "Bakgrund",
-          "th": "พื้นหลัง",
-          "tr": "Arka plan",
-          "vi": "Nền",
-          "zh-CN": "背景",
-          "zh-TW": "背景"
-        },
-        "default": "#ffffff"
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
       },
       {
-        "type": "color",
-        "id": "color_headings",
-        "label": {
-          "cs": "Nadpisy",
-          "da": "Overskrifter",
-          "de": "Titel",
-          "en": "Headings",
-          "es": "Títulos",
-          "fi": "Otsikot",
-          "fr": "Titres",
-          "it": "Titoli",
-          "ja": "見出し",
-          "ko": "제목",
-          "nb": "Overskrifter",
-          "nl": "Koppen",
-          "pl": "Nagłówki",
-          "pt-BR": "Títulos",
-          "pt-PT": "Títulos",
-          "sv": "Rubriker",
-          "th": "ส่วนหัว",
-          "tr": "Başlıklar",
-          "vi": "Tiêu đề",
-          "zh-CN": "标题",
-          "zh-TW": "標題"
-        },
-        "default": "#666666"
+        "type": "header",
+        "content": "Bootstrap Grid"
       },
       {
-        "type": "color",
-        "id": "color_body_text",
-        "label": {
-          "cs": "Základní text",
-          "da": "Brødtekst",
-          "de": "Fließtext",
-          "en": "Body text",
-          "es": "Texto del cuerpo",
-          "fi": "Leipäteksti",
-          "fr": "Corps du texte",
-          "it": "Corpo del testo",
-          "ja": "本文",
-          "ko": "본문 텍스트",
-          "nb": "Brødtekst",
-          "nl": "Hoofdtekst",
-          "pl": "Tekst podstawowy",
-          "pt-BR": "Corpo do texto",
-          "pt-PT": "Corpo de texto",
-          "sv": "Brödtext",
-          "th": "ข้อความเนื้อหา",
-          "tr": "Gövde metni",
-          "vi": "Văn bản nội dung",
-          "zh-CN": "正文文本",
-          "zh-TW": "內文"
-        },
-        "default": "#454545"
+        "type": "paragraph",
+        "content": "💡 [Refer to container width and gutter width in Bootstrap's grid.](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options)"
       },
       {
-        "type": "color",
-        "id": "color_borders",
-        "label": {
-          "cs": "Barva čáry",
-          "da": "Stregfarve",
-          "de": "Linienfarbe",
-          "en": "Line color",
-          "es": "Color de la linea",
-          "fi": "Rivin väri",
-          "fr": "Couleur de la ligne",
-          "it": "Colore della linea",
-          "ja": "線の色",
-          "ko": "선 색상",
-          "nb": "Linjefarge",
-          "nl": "Lijnkleur",
-          "pl": "Kolor linii",
-          "pt-BR": "Cor de linha",
-          "pt-PT": "Cor de linha",
-          "sv": "Linjefärg",
-          "th": "สีของเส้น",
-          "tr": "Çizgi rengi",
-          "vi": "Màu đường kẻ",
-          "zh-CN": "线条颜色",
-          "zh-TW": "線條顏色"
-        },
-        "default": "#83d0bd"
+        "type": "range",
+        "id": "container",
+        "min": 1200,
+        "max": 1920,
+        "step": 10,
+        "unit": "px",
+        "label": "Container width",
+        "default": 1200
       },
       {
-        "type": "color",
-        "id": "color_button_text",
-        "label": {
-          "cs": "Text tlačítek",
-          "da": "Knapetiket",
-          "de": "Button-Etikett",
-          "en": "Buttons label",
-          "es": "Etiqueta de botones",
-          "fi": "Tekstipainike",
-          "fr": "Texte du bouton",
-          "it": "Etichetta pulsanti",
-          "ja": "ボタンのラベル",
-          "ko": "버튼 레이블",
-          "nb": "Knappetikett",
-          "nl": "Label knoppen",
-          "pl": "Przyciski z etykietą",
-          "pt-BR": "Etiqueta de botões",
-          "pt-PT": "Etiqueta de botões",
-          "sv": "Knappetikett",
-          "th": "ป้ายกำกับปุ่ม",
-          "tr": "Düğmeler etiketi",
-          "vi": "Nhãn nút",
-          "zh-CN": "按钮标签",
-          "zh-TW": "按鈕標籤"
-        },
-        "default": "#ffffff"
+        "type": "range",
+        "id": "gutter",
+        "min": 10,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Gutter width",
+        "default": 30
+      },
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "range",
+        "id": "logo_max_width",
+        "min": 100,
+        "max": 600,
+        "step": 5,
+        "unit": "px",
+        "label": "Custom logo width",
+        "default": 450
+      },
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "Safe checkout image"
+      },
+      {
+        "type": "paragraph",
+        "content": "💡 [Find safe checkout image?](http://bit.ly/2ZLhS4V)"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Theme color"
       },
       {
         "type": "color",
         "id": "color_primary",
-        "label": {
-          "cs": "Tlačítka",
-          "da": "Knapper",
-          "de": "Schaltflächen",
-          "en": "Buttons",
-          "es": "Botones",
-          "fi": "Painikkeet",
-          "fr": "Boutons",
-          "it": "Pulsanti",
-          "ja": "ボタン",
-          "ko": "버튼",
-          "nb": "Knapper",
-          "nl": "Knoppen",
-          "pl": "Przyciski",
-          "pt-BR": "Botões",
-          "pt-PT": "Botões",
-          "sv": "Knappar",
-          "th": "ปุ่ม",
-          "tr": "Düğmeler",
-          "vi": "Nút",
-          "zh-CN": "按钮",
-          "zh-TW": "按鈕"
-        },
-        "default": "#83d0bd"
+        "label": "Primary color",
+        "default": "#ad2c34"
       },
       {
         "type": "color",
         "id": "color_secondary",
-        "label": {
-          "cs": "Odkazy a zvýraznění",
-          "da": "Links og markeringer",
-          "de": "Links und Akzente",
-          "en": "Links and accents",
-          "es": "Enlaces y acentos",
-          "fi": "Linkit ja korostukset",
-          "fr": "Liens et accents",
-          "it": "Link ed elementi in risalto",
-          "ja": "リンクとアクセント",
-          "ko": "링크 및 악센트",
-          "nb": "Koblinger og uthevinger",
-          "nl": "Links en accenten",
-          "pl": "Linki i akcenty",
-          "pt-BR": "Links e destaques",
-          "pt-PT": "Ligações e destaques",
-          "sv": "Länkar och accenter",
-          "th": "ลิงก์และการเน้น",
-          "tr": "Bağlantılar ve vurgular",
-          "vi": "Liên kết và chữ nổi bật",
-          "zh-CN": "链接和主题",
-          "zh-TW": "連結和強調"
-        },
-        "default": "#f48400"
+        "label": "Secondary color",
+        "default": "#348a5c"
       },
       {
         "type": "color",
-        "id": "color_product_background",
-        "label": {
-          "cs": "Pozadí produktu",
-          "da": "Baggrund for produkt",
-          "de": "Produkthintergrund",
-          "en": "Product background",
-          "es": "Fondo del producto",
-          "fi": "Tausta",
-          "fr": "Arrière-plan du produit",
-          "it": "Sfondo del prodotto",
-          "ja": "商品の背景",
-          "ko": "제품 배경",
-          "nb": "Bakgrunn for produkt",
-          "nl": "Productachtergrond",
-          "pl": "Tło produktu",
-          "pt-BR": "Plano de fundo do produto",
-          "pt-PT": "Fundo do produto",
-          "sv": "Produktbakgrund",
-          "th": "พื้นหลังของสินค้า",
-          "tr": "Ürün arka planı",
-          "vi": "Nền sản phẩm",
-          "zh-CN": "产品背景",
-          "zh-TW": "產品背景"
-        },
-        "default": "#f7f7f7"
-      },
-      {
-        "type": "color",
-        "id": "color_sale_tag",
-        "label": {
-          "cs": "Štítky označující slevu",
-          "da": "Salgstags",
-          "de": "Angebots-Tags",
-          "en": "Sale tags",
-          "es": "Etiquetas de venta",
-          "fi": "Alennusmyyntitunnisteet",
-          "fr": "Balises de réduction",
-          "it": "Tag offerta",
-          "ja": "販売タグ",
-          "ko": "판매 태그",
-          "nb": "Salgstagger",
-          "nl": "Verkoop-tags",
-          "pl": "Tagi wyprzedaży",
-          "pt-BR": "Tags de venda",
-          "pt-PT": "Etiquetas de venda",
-          "sv": "Reataggar",
-          "th": "แถบป้ายแสดงการลดราคา",
-          "tr": "İndirim etiketleri",
-          "vi": "Thẻ giảm giá",
-          "zh-CN": "销售标签",
-          "zh-TW": "銷售標籤"
-        },
-        "default": "#f48400"
-      },
-      {
-        "type": "color",
-        "id": "color_input",
-        "label": {
-          "cs": "Pole formuláře",
-          "da": "Formularfelter",
-          "de": "Formularfelder",
-          "en": "Form fields",
-          "es": "Campos del formulario",
-          "fi": "Lomakekentät",
-          "fr": "Champs du formulaire",
-          "it": "Campi modulo",
-          "ja": "フォームフィールド",
-          "ko": "양식 필드",
-          "nb": "Skjemafelt",
-          "nl": "Formuliervelden",
-          "pl": "Pola formularza",
-          "pt-BR": "Campos de formulário",
-          "pt-PT": "Campos de formulário",
-          "sv": "Formulärfält",
-          "th": "ช่องข้อมูลของแบบฟอร์ม",
-          "tr": "Form alanları",
-          "vi": "Trường biểu mẫu",
-          "zh-CN": "表单字段",
-          "zh-TW": "表單欄位"
-        },
-        "default": "#f7f7f7"
-      },
-      {
-        "type": "color",
-        "id": "color_newsletter",
-        "label": {
-          "cs": "Pozadí novinek a tabulek",
-          "da": "Baggrund for nyhedsbrev og tabeller",
-          "de": "Newsletter- und Tabellen-Hintergrund",
-          "en": "Newsletter and tables background",
-          "es": "Fondo de boletines y tablas",
-          "fi": "Uutiskirje ja taulukoiden tausta",
-          "fr": "Arrière-plan de la newsletter et des tableaux",
-          "it": "Sfondo della newsletter e delle tabelle",
-          "ja": "ニュースレターとテーブル背景",
-          "ko": "뉴스레터 및 표 배경",
-          "nb": "Bakgrunn for nyhetsbrev og tabeller",
-          "nl": "Achtergrond nieuwsbrief en tabellen",
-          "pl": "Tło newslettera i tabel",
-          "pt-BR": "Plano de fundo de newsletter e tabelas",
-          "pt-PT": "Fundo de tabelas e newsletter",
-          "sv": "Bakgrund för nyhetsbrev och tabeller",
-          "th": "พื้นหลังของจดหมายข่าวและตาราง",
-          "tr": "Bülten ve tablolar arka planı",
-          "vi": "Nền bản tin và bảng",
-          "zh-CN": "新闻通讯和表背景",
-          "zh-TW": "電子報和表格背景"
-        },
-        "default": "#f7f7f7"
+        "id": "color_cta",
+        "label": "CTA Button color",
+        "default": "#348a5c"
       },
       {
         "type": "header",
-        "content": {
-          "cs": "Zásuvky",
-          "da": "Skuffer",
-          "de": "Einschübe",
-          "en": "Drawers",
-          "es": "Cajones",
-          "fi": "Laatikot",
-          "fr": "Tiroirs",
-          "it": "Finestre",
-          "ja": "ドロワー",
-          "ko": "등록기",
-          "nb": "Skuffer",
-          "nl": "Laden",
-          "pl": "Szuflady",
-          "pt-BR": "Caixas registradoras",
-          "pt-PT": "Gavetas",
-          "sv": "Lådor",
-          "th": "ลิ้นชัก",
-          "tr": "Çekmeceler",
-          "vi": "Ngăn",
-          "zh-CN": "抽屉",
-          "zh-TW": "收銀機"
-        }
+        "content": "Page"
       },
       {
         "type": "color",
-        "id": "color_drawer_background",
-        "label": {
-          "cs": "Pozadí",
-          "da": "Baggrund",
-          "de": "Hintergrund",
-          "en": "Background",
-          "es": "Fondo",
-          "fi": "Tausta",
-          "fr": "Arrière-plan",
-          "it": "Sfondo",
-          "ja": "背景",
-          "ko": "배경",
-          "nb": "Bakgrunn",
-          "nl": "Achtergrond",
-          "pl": "Tło",
-          "pt-BR": "Plano de fundo",
-          "pt-PT": "Fundo",
-          "sv": "Bakgrund",
-          "th": "พื้นหลัง",
-          "tr": "Arka plan",
-          "vi": "Nền",
-          "zh-CN": "背景",
-          "zh-TW": "背景"
-        },
-        "default": "#f7f7f7"
+        "id": "color_body_bg",
+        "label": "Page background",
+        "default": "#fff"
       },
       {
         "type": "color",
-        "id": "color_drawer_text",
-        "label": {
-          "cs": "Text",
-          "da": "Tekst",
-          "de": "Text",
-          "en": "Text",
-          "es": "Texto",
-          "fi": "Teksti",
-          "fr": "Texte",
-          "it": "Testo",
-          "ja": "テキスト",
-          "ko": "텍스트",
-          "nb": "Tekst",
-          "nl": "Tekst",
-          "pl": "Tekst",
-          "pt-BR": "Texto",
-          "pt-PT": "Texto",
-          "sv": "Text",
-          "th": "ข้อความ",
-          "tr": "Metin",
-          "vi": "Văn bản",
-          "zh-CN": "文本",
-          "zh-TW": "文字"
-        },
-        "default": "#454545"
+        "id": "color_content_bg",
+        "label": "Content background",
+        "default": "#fff"
       },
       {
         "type": "color",
-        "id": "color_drawer_border",
-        "label": {
-          "cs": "Čáry a ohraničení",
-          "da": "Linjer og kanter",
-          "de": "Linien und Rahmen",
-          "en": "Lines and borders",
-          "es": "Líneas y bordes",
-          "fi": "Rivit ja reunat",
-          "fr": "Lignes et bordures",
-          "it": "Linee e bordi",
-          "ja": "線と罫線",
-          "ko": "선 및 테두리",
-          "nb": "Linjer og rammer",
-          "nl": "Lijnen en randen",
-          "pl": "Linie i obramowania",
-          "pt-BR": "Linhas e bordas",
-          "pt-PT": "Linhas e limites",
-          "sv": "Linjer och gränser",
-          "th": "เส้นและขอบ",
-          "tr": "Çizgiler ve kenarlıklar",
-          "vi": "Đường kẻ và đường viền",
-          "zh-CN": "线条和边框",
-          "zh-TW": "線條和邊框"
-        },
-        "default": "#D7EEE8"
+        "id": "color_body_headings",
+        "label": "Heading text",
+        "default": "#1a1a1a"
       },
       {
         "type": "color",
-        "id": "color_drawer_button",
-        "label": {
-          "cs": "Tlačítka",
-          "da": "Knapper",
-          "de": "Schaltflächen",
-          "en": "Buttons",
-          "es": "Botones",
-          "fi": "Painikkeet",
-          "fr": "Boutons",
-          "it": "Pulsanti",
-          "ja": "ボタン",
-          "ko": "버튼",
-          "nb": "Knapper",
-          "nl": "Knoppen",
-          "pl": "Przyciski",
-          "pt-BR": "Botões",
-          "pt-PT": "Botões",
-          "sv": "Knappar",
-          "th": "ปุ่ม",
-          "tr": "Düğmeler",
-          "vi": "Nút",
-          "zh-CN": "按钮",
-          "zh-TW": "按鈕"
-        },
-        "default": "#83d0bd"
+        "id": "color_body_text",
+        "label": "Body text",
+        "default": "#666"
       },
       {
         "type": "color",
-        "id": "color_drawer_button_text",
-        "label": {
-          "cs": "Text tlačítka",
-          "da": "Knaptekst",
-          "de": "Schaltflächentext",
-          "en": "Button text",
-          "es": "Botón de texto",
-          "fi": "Painikkeen teksti",
-          "fr": "Texte du bouton",
-          "it": "Testo pulsante",
-          "ja": "ボタンテキスト",
-          "ko": "버튼 텍스트",
-          "nb": "Knapptekst",
-          "nl": "Knoptekst",
-          "pl": "Tekst przycisku",
-          "pt-BR": "Texto do botão",
-          "pt-PT": "Texto do botão",
-          "sv": "Knapptext",
-          "th": "ข้อความปุ่ม",
-          "tr": "Düğme metni",
-          "vi": "Chữ trên nút",
-          "zh-CN": "按钮文字",
-          "zh-TW": "按鈕文字"
-        },
-        "default": "#ffffff"
+        "id": "color_button_bg",
+        "label": "Buttons, links, and promotion bar",
+        "default": "#006eff"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button text",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "Gradient color"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
       }
     ]
   },
   {
-    "name": {
-      "cs": "Typografie",
-      "da": "Typografi",
-      "de": "Typografie",
-      "en": "Typography",
-      "es": "Tipografía",
-      "fi": "Typografia",
-      "fr": "Typographie",
-      "it": "Caratteri tipografici",
-      "ja": "文字体裁",
-      "ko": "입력 체계",
-      "nb": "Typografi",
-      "nl": "Typografie",
-      "pl": "Typografia",
-      "pt-BR": "Tipografia",
-      "pt-PT": "Tipografia",
-      "sv": "Typografi",
-      "th": "ตัวพิมพ์",
-      "tr": "Tipografi",
-      "vi": "Kiểu chữ",
-      "zh-CN": "版式",
-      "zh-TW": "印刷樣式"
-    },
+    "name": "Typography",
     "settings": [
       {
         "type": "header",
-        "content": {
-          "cs": "Nadpisy",
-          "da": "Overskrifter",
-          "de": "Titel",
-          "en": "Headings",
-          "es": "Títulos",
-          "fi": "Otsikot",
-          "fr": "Titres",
-          "it": "Titoli",
-          "ja": "見出し",
-          "ko": "제목",
-          "nb": "Overskrifter",
-          "nl": "Koppen",
-          "pl": "Nagłówki",
-          "pt-BR": "Títulos",
-          "pt-PT": "Títulos",
-          "sv": "Rubriker",
-          "th": "ส่วนหัว",
-          "tr": "Başlıklar",
-          "vi": "Tiêu đề",
-          "zh-CN": "标题",
-          "zh-TW": "標題"
-        }
+        "content": "Font main"
       },
       {
         "type": "font_picker",
-        "id": "type_header_family",
-        "label": {
-          "cs": "Písmo",
-          "da": "Skrifttype",
-          "de": "Schriftart",
-          "en": "Font",
-          "es": "Fuente",
-          "fi": "Fontti",
-          "fr": "Police",
-          "it": "Font",
-          "ja": "フォント",
-          "ko": "글꼴",
-          "nb": "Skrifttype",
-          "nl": "Lettertype",
-          "pl": "Czcionka",
-          "pt-BR": "Fonte",
-          "pt-PT": "Tipo de letra",
-          "sv": "Typsnitt",
-          "th": "แบบอักษร",
-          "tr": "Yazı tipi",
-          "vi": "Phông chữ",
-          "zh-CN": "字体",
-          "zh-TW": "字型"
-        },
-        "default": "old_standard_tt_n4"
+        "id": "font_family",
+        "label": "Shopify font",
+        "default": "karla_n4"
       },
       {
-        "type": "select",
-        "id": "type_header_base_size",
-        "label": {
-          "cs": "Základní velikost",
-          "da": "Basisstørrelse",
-          "de": "Basisgröße",
-          "en": "Base size",
-          "es": "Tamaño de base",
-          "fi": "Peruskoko",
-          "fr": "Taille de base",
-          "it": "Dimensione base",
-          "ja": "ベースサイズ",
-          "ko": "기본 사이즈",
-          "nb": "Grunnstørrelse",
-          "nl": "Basisafmeting",
-          "pl": "Rozmiar podstawowy",
-          "pt-BR": "Tamanho básico",
-          "pt-PT": "Tamanho básico",
-          "sv": "Basstorlek",
-          "th": "ขนาดพื้นฐาน",
-          "tr": "Temel boyutu",
-          "vi": "Cỡ cơ sở",
-          "zh-CN": "基本尺寸",
-          "zh-TW": "基本尺寸"
-        },
-        "default": "30px",
-        "options": [
-          {
-            "value": "26px",
-            "label": {
-              "cs": "26 px",
-              "da": "26 px",
-              "de": "26px",
-              "en": "26px",
-              "es": "26px",
-              "fi": "26 pikseliä",
-              "fr": "26 px",
-              "it": "26 px",
-              "ja": "26ピクセル",
-              "ko": "26픽셀",
-              "nb": "26px",
-              "nl": "26px",
-              "pl": "25 px",
-              "pt-BR": "26px",
-              "pt-PT": "26 px",
-              "sv": "26 px",
-              "th": "26px",
-              "tr": "26 piksel",
-              "vi": "26px",
-              "zh-CN": "26 px",
-              "zh-TW": "26 像素"
-            }
-          },
-          {
-            "value": "28px",
-            "label": {
-              "cs": "28 px",
-              "da": "28 px",
-              "de": "28px",
-              "en": "28px",
-              "es": "28px",
-              "fi": "28 pikseliä",
-              "fr": "28 px",
-              "it": "28 px",
-              "ja": "28ピクセル",
-              "ko": "28픽셀",
-              "nb": "28px",
-              "nl": "28px",
-              "pl": "28 px",
-              "pt-BR": "28px",
-              "pt-PT": "28 px",
-              "sv": "28 px",
-              "th": "28px",
-              "tr": "28 piksel",
-              "vi": "28px",
-              "zh-CN": "28 px",
-              "zh-TW": "28 像素"
-            }
-          },
-          {
-            "value": "30px",
-            "label": {
-              "cs": "30 px",
-              "da": "30 px",
-              "de": "30px",
-              "en": "30px",
-              "es": "30px",
-              "fi": "30 px",
-              "fr": "30 px",
-              "it": "30 px",
-              "ja": "30ピクセル",
-              "ko": "30픽셀",
-              "nb": "30 piksler",
-              "nl": "30px",
-              "pl": "30 px",
-              "pt-BR": "30px",
-              "pt-PT": "30 px",
-              "sv": "30 px",
-              "th": "30px",
-              "tr": "30 piksel",
-              "vi": "30px",
-              "zh-CN": "30 PX",
-              "zh-TW": "30 像素"
-            }
-          },
-          {
-            "value": "32px",
-            "label": {
-              "cs": "32 px",
-              "da": "32 px",
-              "de": "32px",
-              "en": "32px",
-              "es": "32px",
-              "fi": "32 px",
-              "fr": "32 px",
-              "it": "32 px",
-              "ja": "32ピクセル",
-              "ko": "32픽셀",
-              "nb": "32 piksler",
-              "nl": "32px",
-              "pl": "32 px",
-              "pt-BR": "32px",
-              "pt-PT": "32 px",
-              "sv": "32 px",
-              "th": "32px",
-              "tr": "32 piksel",
-              "vi": "32px",
-              "zh-CN": "32 PX",
-              "zh-TW": "32 像素"
-            }
-          },
-          {
-            "value": "34px",
-            "label": {
-              "cs": "34 px",
-              "da": "34 px",
-              "de": "34px",
-              "en": "34px",
-              "es": "34px",
-              "fi": "34 px",
-              "fr": "34 px",
-              "it": "34 px",
-              "ja": "34ピクセル",
-              "ko": "34픽셀",
-              "nb": "34 piksler",
-              "nl": "34px",
-              "pl": "34 px",
-              "pt-BR": "34px",
-              "pt-PT": "34 px",
-              "sv": "34 px",
-              "th": "34px",
-              "tr": "34 piksel",
-              "vi": "34px",
-              "zh-CN": "34 PX",
-              "zh-TW": "34 像素"
-            }
-          },
-          {
-            "value": "44px",
-            "label": {
-              "cs": "44 px",
-              "da": "44 px",
-              "de": "44px",
-              "en": "44px",
-              "es": "44px",
-              "fi": "44 px",
-              "fr": "44 px",
-              "it": "44 px",
-              "ja": "44ピクセル",
-              "ko": "44픽셀",
-              "nb": "44 piksler",
-              "nl": "44px",
-              "pl": "44 px",
-              "pt-BR": "44px",
-              "pt-PT": "44 px",
-              "sv": "44 px",
-              "th": "44px",
-              "tr": "44 piksel",
-              "vi": "44px",
-              "zh-CN": "44 PX",
-              "zh-TW": "44 像素"
-            }
-          }
-        ]
+        "type": "text",
+        "id": "font_family_google",
+        "label": "Google font",
+        "info": "💡 [Find more Google fonts](https://fonts.google.com)",
+        "default": "Staatliches"
       },
       {
-        "type": "select",
-        "id": "type_header_border_thickness",
-        "label": {
-          "cs": "Tloušťka podtržení",
-          "da": "Tykkelse af understregning",
-          "de": "Unterstreichungsstärke",
-          "en": "Underline thickness",
-          "es": "Espesor de subrayado",
-          "fi": "Alleviivauksen paksuus",
-          "fr": "Largeur du soulignement",
-          "it": "Spessore sottolineatura",
-          "ja": "下線の太さ",
-          "ko": "굵은 밑줄 표시",
-          "nb": "Tykkelse på understrekning",
-          "nl": "Dikte onderstreep",
-          "pl": "Grubość podkreślenia",
-          "pt-BR": "Espessura do sublinhado",
-          "pt-PT": "Espessura do sublinhado",
-          "sv": "Understryk tjocklek",
-          "th": "ความหนาของขีดเส้นใต้",
-          "tr": "Alt çizgi kalınlığı",
-          "vi": "Độ dày đường gạch dưới",
-          "zh-CN": "下划线厚度",
-          "zh-TW": "底線粗細"
-        },
-        "options": [
-          {
-            "value": "1px",
-            "label": {
-              "cs": "Mírná",
-              "da": "Lys",
-              "de": "Hell",
-              "en": "Light",
-              "es": "Claro",
-              "fi": "Vaalea",
-              "fr": "Clair",
-              "it": "Chiaro",
-              "ja": "ライト",
-              "ko": "밝게",
-              "nb": "Lys",
-              "nl": "Licht",
-              "pl": "Cienkie",
-              "pt-BR": "Light",
-              "pt-PT": "Light",
-              "sv": "Ljus",
-              "th": "สว่าง",
-              "tr": "İnce",
-              "vi": "Sáng",
-              "zh-CN": "浅色",
-              "zh-TW": "淺色"
-            }
-          },
-          {
-            "value": "2px",
-            "label": {
-              "cs": "Střední",
-              "da": "Medium",
-              "de": "Mitte",
-              "en": "Medium",
-              "es": "Medio",
-              "fi": "Keskisuuri",
-              "fr": "Moyenne",
-              "it": "Medium",
-              "ja": "中",
-              "ko": "보통",
-              "nb": "Middels",
-              "nl": "Gemiddeld",
-              "pl": "Średnie",
-              "pt-BR": "Médio",
-              "pt-PT": "Intermédio",
-              "sv": "Medium",
-              "th": "ปานกลาง",
-              "tr": "Orta",
-              "vi": "Trung bình",
-              "zh-CN": "中等",
-              "zh-TW": "中等"
-            }
-          },
-          {
-            "value": "3px",
-            "label": {
-              "cs": "Výrazná",
-              "da": "Fed",
-              "de": "Fett",
-              "en": "Bold",
-              "es": "Negrita",
-              "fi": "Lihavoitu",
-              "fr": "Gras",
-              "it": "Audace",
-              "ja": "太字",
-              "ko": "굵게",
-              "nb": "Fet",
-              "nl": "Vetgedrukt",
-              "pl": "Pogrubienie",
-              "pt-BR": "Negrito",
-              "pt-PT": "Negrito",
-              "sv": "Fet",
-              "th": "ตัวหนา",
-              "tr": "Kalın",
-              "vi": "Đậm",
-              "zh-CN": "粗体",
-              "zh-TW": "粗體"
-            }
-          }
-        ]
+        "type": "paragraph",
+        "content": "💡 Set blank to use Shopify font"
       },
       {
         "type": "header",
-        "content": {
-          "cs": "Zvýrazněný text",
-          "da": "Markeringstekst",
-          "de": "Akzenttext",
-          "en": "Accent text",
-          "es": "Texto resaltado",
-          "fi": "Korostettu teksti",
-          "fr": "Texte en exergue",
-          "it": "Testo in risalto",
-          "ja": "強調文字",
-          "ko": "강조 텍스트",
-          "nb": "Uthevet tekst",
-          "nl": "Accenttekst",
-          "pl": "Tekst akcentowany",
-          "pt-BR": "Texto de destaque",
-          "pt-PT": "Texto acentuado",
-          "sv": "Accenttext",
-          "th": "ข้อความเน้น",
-          "tr": "Vurgu metni",
-          "vi": "Chữ nổi bật",
-          "zh-CN": "强调文本",
-          "zh-TW": "顯眼文字"
-        },
-        "info": {
-          "cs": "Nabídky, tlačítka a podnadpis prezentace",
-          "da": "Menuer, knapper og underoverskrift for diasshow",
-          "de": "Menüs, Schaltflächen und Slideshow-Untertitel",
-          "en": "Menus, buttons, and slideshow subheading",
-          "es": "Menús, botones y subtítulos de diapositivas",
-          "fi": "Valikot, painikkeet ja diaesityksen alaotsikko",
-          "fr": "Menus, boutons et sous-titre du diaporama",
-          "it": "Menu, pulsanti e sottotitolo della presentazione",
-          "ja": "メニュー、ボタン、スライドショーの小見出し",
-          "ko": "메뉴, 버튼 및 슬라이드 쇼 소제목",
-          "nb": "Underoverskrift for menyer, knapper og lysbildefremvisning",
-          "nl": "Subtitel voor menu's, knoppen en diavoorstellingen",
-          "pl": "Menu, przyciski i nagłówek podrzędny pokazu slajdów",
-          "pt-BR": "Menus, botões e subtítulo de apresentação de slides",
-          "pt-PT": "Menus, botões e subtítulo de apresentação de diapositivos",
-          "sv": "Menyer, knappar och bildspelets underrubrik",
-          "th": "หัวเรื่องย่อยของเมนู ปุ่ม และสไลด์โชว์",
-          "tr": "Menüler, düğmeler ve slayt gösterisi alt başlığı",
-          "vi": "Menu, nút và tiêu đề phụ bản trình chiếu",
-          "zh-CN": "菜单、按钮和幻灯片副标题",
-          "zh-TW": "選單、按鈕和投影片副標題"
-        }
+        "content": "Font 2"
       },
       {
-        "type": "font_picker",
-        "id": "type_accent_family",
-        "label": {
-          "cs": "Písmo",
-          "da": "Skrifttype",
-          "de": "Schriftart",
-          "en": "Font",
-          "es": "Fuente",
-          "fi": "Fontti",
-          "fr": "Police",
-          "it": "Font",
-          "ja": "フォント",
-          "ko": "글꼴",
-          "nb": "Skrifttype",
-          "nl": "Lettertype",
-          "pl": "Czcionka",
-          "pt-BR": "Fonte",
-          "pt-PT": "Tipo de letra",
-          "sv": "Typsnitt",
-          "th": "แบบอักษร",
-          "tr": "Yazı tipi",
-          "vi": "Phông chữ",
-          "zh-CN": "字体",
-          "zh-TW": "字型"
-        },
-        "default": "montserrat_n6"
-      },
-      {
-        "type": "checkbox",
-        "id": "type_accent_transform",
-        "label": {
-          "cs": "Nastavit velká písmena",
-          "da": "Skriv teksten med store bogstaver",
-          "de": "Text groß schreiben",
-          "en": "Capitalize text",
-          "es": "Poner texto en mayúsculas",
-          "fi": "Kirjoita isoilla kirjaimilla",
-          "fr": "Mettre le texte en majuscules",
-          "it": "Testo maiuscolo",
-          "ja": "テキストを大文字にする",
-          "ko": "대문자 표기",
-          "nb": "Kapitaliser tekst",
-          "nl": "Tekst kapitaliseren",
-          "pl": "Użyj wielkich liter",
-          "pt-BR": "Texto em maiúscula",
-          "pt-PT": "Colocar texto em maiúsculas",
-          "sv": "Skriv text med versal",
-          "th": "ใช้อักษรตัวพิมพ์ใหญ่",
-          "tr": "Metin harflerini büyüt",
-          "vi": "Viết hoa văn bản",
-          "zh-CN": "大写文本",
-          "zh-TW": "將文字大寫"
-        },
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "type_accent_spacing",
-        "label": {
-          "cs": "Proložení znaků",
-          "da": "Lav afstand mellem bogstaver",
-          "de": "Leerzeichen",
-          "en": "Space letters",
-          "es": "Espaciar letras",
-          "fi": "Muuta kirjainten väliä",
-          "fr": "Espacer les lettres",
-          "it": "Distanzia lettere",
-          "ja": "文字の隙間を入れる",
-          "ko": "자간",
-          "nb": "Plass mellom bokstaver",
-          "nl": "Spatie letters",
-          "pl": "Wstaw spacje między literami",
-          "pt-BR": "Espaçar letras",
-          "pt-PT": "Espaçar letras",
-          "sv": "Mellanslag",
-          "th": "ตัวเว้นช่องว่าง",
-          "tr": "Harfler arasında boşluk bırak",
-          "vi": "Giãn cách chữ cái",
-          "zh-CN": "隔开字母",
-          "zh-TW": "空格字母"
-        },
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "type_accent_subheadings",
-        "label": {
-          "cs": "Pro podnadpisy použít zvýrazněný text",
-          "da": "Brug markeringstekst til underoverskrift",
-          "de": "Akzenttext für Unterüberschriften verwenden",
-          "en": "Use accent text for subheadings",
-          "es": "Utilizar el texto resaltado para subtítulos",
-          "fi": "Käytä korostettua tekstiä otsikoissa",
-          "fr": "Utiliser un texte en exergue pour les sous-titres",
-          "it": "Utilizza testo in risalto per i sottotitoli",
-          "ja": "小見出しに強調文字を使用する",
-          "ko": "소제목에 강조 텍스트 사용",
-          "nb": "Bruk uthevet tekst for underoverskrifter",
-          "nl": "Gebruik accenttekst voor subkoppen",
-          "pl": "Użyj tekstu akcentowanego dla nagłówków podrzędnych",
-          "pt-BR": "Usar texto de destaque em subtítulos",
-          "pt-PT": "Utilizar texto acentuado em subtítulos",
-          "sv": "Använd accenttext för underrubriker",
-          "th": "ใช้ข้อความเน้นสำหรับหัวเรื่องย่อย",
-          "tr": "Alt başlıklar için vurgu metni kullan",
-          "vi": "Sử dụng chữ nổi bật cho tiêu đề phụ",
-          "zh-CN": "使用强调文本作为副标题",
-          "zh-TW": "副標題使用顯眼文字"
-        },
-        "default": true
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
       },
       {
         "type": "header",
-        "content": {
-          "cs": "Základní text",
-          "da": "Brødtekst",
-          "de": "Fließtext",
-          "en": "Body text",
-          "es": "Texto del cuerpo",
-          "fi": "Leipäteksti",
-          "fr": "Corps du texte",
-          "it": "Corpo del testo",
-          "ja": "本文",
-          "ko": "본문 텍스트",
-          "nb": "Brødtekst",
-          "nl": "Hoofdtekst",
-          "pl": "Tekst podstawowy",
-          "pt-BR": "Corpo do texto",
-          "pt-PT": "Corpo de texto",
-          "sv": "Brödtext",
-          "th": "ข้อความเนื้อหา",
-          "tr": "Gövde metni",
-          "vi": "Văn bản nội dung",
-          "zh-CN": "正文文本",
-          "zh-TW": "內文"
-        }
+        "content": "Font 3"
       },
       {
-        "type": "font_picker",
-        "id": "type_base_family",
-        "label": {
-          "cs": "Písmo",
-          "da": "Skrifttype",
-          "de": "Schriftart",
-          "en": "Font",
-          "es": "Fuente",
-          "fi": "Fontti",
-          "fr": "Police",
-          "it": "Font",
-          "ja": "フォント",
-          "ko": "폰트",
-          "nb": "Skrifttype",
-          "nl": "Lettertype",
-          "pl": "Czcionka",
-          "pt-BR": "Fonte",
-          "pt-PT": "Tipo de letra",
-          "sv": "Typsnitt",
-          "th": "แบบอักษร",
-          "tr": "Yazı tipi",
-          "vi": "Phông chữ",
-          "zh-CN": "字体",
-          "zh-TW": "字型"
-        },
-        "default": "arapey_n4"
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
       },
       {
         "type": "select",
         "id": "type_base_size",
-        "label": {
-          "cs": "Základní velikost",
-          "da": "Basisstørrelse",
-          "de": "Basisgröße",
-          "en": "Base size",
-          "es": "Tamaño de base",
-          "fi": "Peruskoko",
-          "fr": "Taille de base",
-          "it": "Dimensione base",
-          "ja": "ベースサイズ",
-          "ko": "기본 사이즈",
-          "nb": "Grunnstørrelse",
-          "nl": "Basisafmeting",
-          "pl": "Rozmiar podstawowy",
-          "pt-BR": "Tamanho básico",
-          "pt-PT": "Tamanho básico",
-          "sv": "Basstorlek",
-          "th": "ขนาดพื้นฐาน",
-          "tr": "Temel boyutu",
-          "vi": "Cỡ cơ sở",
-          "zh-CN": "基本尺寸",
-          "zh-TW": "基本尺寸"
-        },
-        "default": "16px",
+        "label": "Size",
         "options": [
           {
             "value": "14px",
-            "label": {
-              "cs": "14 px",
-              "da": "14 px",
-              "de": "14px",
-              "en": "14px",
-              "es": "14px",
-              "fi": "14 pikseliä",
-              "fr": "14 px",
-              "it": "14 px",
-              "ja": "14ピクセル",
-              "ko": "14픽셀",
-              "nb": "14px",
-              "nl": "14px",
-              "pl": "14 px",
-              "pt-BR": "14px",
-              "pt-PT": "14 px",
-              "sv": "14 px",
-              "th": "14px",
-              "tr": "14 piksel",
-              "vi": "14px",
-              "zh-CN": "14 px",
-              "zh-TW": "14px"
-            }
+            "label": "14px"
           },
           {
             "value": "15px",
-            "label": {
-              "cs": "15 px",
-              "da": "15 px",
-              "de": "15px",
-              "en": "15px",
-              "es": "15px",
-              "fi": "15 pikseliä",
-              "fr": "15 px",
-              "it": "15 px",
-              "ja": "15ピクセル",
-              "ko": "15픽셀",
-              "nb": "15px",
-              "nl": "15px",
-              "pl": "15 px",
-              "pt-BR": "15px",
-              "pt-PT": "15 px",
-              "sv": "15 px",
-              "th": "15px",
-              "tr": "15 piksel",
-              "vi": "15px",
-              "zh-CN": "15 px",
-              "zh-TW": "15px"
-            }
+            "label": "15px"
           },
           {
             "value": "16px",
-            "label": {
-              "cs": "16 px",
-              "da": "16 px",
-              "de": "16px",
-              "en": "16px",
-              "es": "16px",
-              "fi": "16 pikseliä",
-              "fr": "16 px",
-              "it": "16 px",
-              "ja": "16ピクセル",
-              "ko": "16픽셀",
-              "nb": "16px",
-              "nl": "16px",
-              "pl": "16 px",
-              "pt-BR": "16px",
-              "pt-PT": "16 px",
-              "sv": "16 px",
-              "th": "16px",
-              "tr": "16 piksel",
-              "vi": "16px",
-              "zh-CN": "16 px",
-              "zh-TW": "16px"
-            }
+            "label": "16px"
           },
           {
             "value": "17px",
-            "label": {
-              "cs": "17 px",
-              "da": "17 px",
-              "de": "17px",
-              "en": "17px",
-              "es": "17px",
-              "fi": "17 pikseliä",
-              "fr": "17 px",
-              "it": "17 px",
-              "ja": "17ピクセル",
-              "ko": "17픽셀",
-              "nb": "17px",
-              "nl": "17px",
-              "pl": "17 px",
-              "pt-BR": "17px",
-              "pt-PT": "17 px",
-              "sv": "17 px",
-              "th": "17px",
-              "tr": "17 piksel",
-              "vi": "17px",
-              "zh-CN": "17 px",
-              "zh-TW": "17px"
-            }
+            "label": "17px"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Navigation",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_linklist",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "header",
+        "content": "Menu labels"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/izJdw/sale)"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 1"
+      },
+      {
+        "type": "text",
+        "id": "apmenuitem_title_1",
+        "label": "Appears under the menu named:",
+        "info": "Enter menu item's name"
+      },
+      {
+        "type": "range",
+        "id": "apmenuitem_width_1",
+        "min": 0,
+        "max": 1920,
+        "step": 20,
+        "label": "Megamenu width",
+        "default": 0,
+        "unit": "px",
+        "info": "Set the value to 0 for fullwidth megamenu"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 1 - Links"
+      },
+      {
+        "type": "checkbox",
+        "id": "apmenuitem_eblocklinks_1",
+        "label": "Enable"
+      },
+      {
+        "type": "select",
+        "id": "apmenuitem_columns_blocklinks_1",
+        "label": "Width",
+        "options": [
+          {
+            "value": "1",
+            "label": "1/12 (8.33%)"
+          },
+          {
+            "value": "2",
+            "label": "2/12 (16.67%)"
+          },
+          {
+            "value": "3",
+            "label": "3/12 (25.00%)"
+          },
+          {
+            "value": "4",
+            "label": "4/12 (33.33%)"
+          },
+          {
+            "value": "5",
+            "label": "5/12 (41.67%)"
+          },
+          {
+            "value": "6",
+            "label": "6/12 (50.00%)"
+          },
+          {
+            "value": "7",
+            "label": "7/12 (58.33%)"
+          },
+          {
+            "value": "8",
+            "label": "8/12 (66.67%)"
+          },
+          {
+            "value": "9",
+            "label": "9/12 (75.00%)"
+          },
+          {
+            "value": "10",
+            "label": "10/12 (83.33%)"
+          },
+          {
+            "value": "11",
+            "label": "11/12 (91.67%)"
+          },
+          {
+            "value": "12",
+            "label": "12/12 (100.00%)"
           }
         ]
       },
       {
-        "type": "checkbox",
-        "id": "type_base_italize_titles",
-        "label": {
-          "cs": "Nastavit kurzívu u názvů, uvozovek citací, odkazů rozevíracích nabídek, komentářů, jmen autorů a kalendářních dat",
-          "da": "Sæt titler, blokanførselstegn, links i rullemenuer, forfatternavne til kommentarer og datoer i kursiv.",
-          "de": "Titel, Blockzitate, Dropdown-Links, Name des Kommentators und Datum kursiv setzen.",
-          "en": "Italicize titles, blockquotes, drop-down links, comment author name, and dates.",
-          "es": "Escribir en cursiva títulos, citas en bloques, enlaces desplegables, nombre del autor del comentario y fechas.",
-          "fi": "Kursivoi otsikot, lainaukset, alasvetovalikon linkit, kommentoijien nimet ja päivämäärät.",
-          "fr": "Mettre en italiques les titres, les blocs de citation, les commentaires, le nom de l'auteur et les dates.",
-          "it": "Scrivi in corsivo i titoli, le citazioni, i link a discesa, il nome dell'autore del commento e le date.",
-          "ja": "タイトル、ブロック引用、ドロップダウンリンク、コメント者名、日付を斜体で表示する。",
-          "ko": "제목, 인용구, 드롭 다운 링크, 댓글 작성자 이름 및 날짜를 이탤릭체로 표시하십시오.",
-          "nb": "Titler, blokksitater, koblinger i rullegardinmeny, forfatternavn til kommentarer og datoer i kursiv.",
-          "nl": "Maak titels, blockquotes, vervolgkeuzelinks, naam van de auteur van de opmerking en datums cursief.",
-          "pl": "Zastosuj kursywę do tytułów, cytatów blokowych, linków rozwijanych, nazwisk autorów komentarzy i dat.",
-          "pt-BR": "Aplicar itálico a títulos, blocos de citação, nome do autor do comentário e datas.",
-          "pt-PT": "Aplicar itálico a títulos, blocos de citação, ligações de menus pendentes, nome do autor do comentário e datas.",
-          "sv": "Kursivera rubriker, blockcitat, drop-down-länkar, kommentera författarnamn och datum.",
-          "th": "ทำให้ชื่อเรื่อง อ้างอิงข้อความในกรอบ ลิงก์ดร็อปดาวน์ ชื่อผู้เขียนความคิดเห็น และวันที่เป็นตัวเอียง",
-          "tr": "Başlıklar, öbekler, açılır bağlantılar, yorum yazanın adı ve tarihleri italik yapın.",
-          "vi": "In nghiêng tiêu đề, đoạn trích dẫn, liên kết thả xuống, tên người bình luận và ngày.",
-          "zh-CN": "将标题、块引用、下拉链接、评论作者姓名和日期设置为斜体。",
-          "zh-TW": "將標題、區塊引用、下拉式選單連結、留言作者名稱和日期設為斜體。"
-        },
-        "default": true
-      }
-    ]
-  },
-  {
-    "name": {
-      "cs": "Stránka košíku",
-      "da": "Side med indkøbskurv",
-      "de": "Warenkorbseite",
-      "en": "Cart page",
-      "es": "Página del carrito",
-      "fi": "Ostoskorisivu",
-      "fr": "Page de panier",
-      "it": "Pagina del carrello",
-      "ja": "カートページ",
-      "ko": "카트 페이지",
-      "nb": "Handlekurvside",
-      "nl": "Winkelwagenpagina",
-      "pl": "Strona koszyka",
-      "pt-BR": "Página do carrinho",
-      "pt-PT": "Página do carrinho",
-      "sv": "Varukorgssida",
-      "th": "หน้าตะกร้าสินค้า",
-      "tr": "Sepet sayfası",
-      "vi": "Trang giỏ hàng",
-      "zh-CN": "购物车页面",
-      "zh-TW": "購物車頁面"
-    },
-    "settings": [
-      {
         "type": "select",
-        "id": "cart_type",
+        "id": "apmenuitem_columns_1",
+        "label": "Sublink width",
         "options": [
           {
-            "value": "page",
-            "label": {
-              "cs": "Stránka",
-              "da": "Side",
-              "de": "Seite",
-              "en": "Page",
-              "es": "Página",
-              "fi": "Sivu",
-              "fr": "Page",
-              "it": "Pagina",
-              "ja": "ページ",
-              "ko": "페이지",
-              "nb": "Side",
-              "nl": "Pagina",
-              "pl": "Strona",
-              "pt-BR": "Página",
-              "pt-PT": "Página",
-              "sv": "Sida",
-              "th": "หน้า",
-              "tr": "Sayfa",
-              "vi": "Trang",
-              "zh-CN": "页面",
-              "zh-TW": "頁面"
-            }
+            "value": "1",
+            "label": "1/12 (8.33%)"
           },
           {
-            "value": "drawer",
-            "label": {
-              "cs": "Zásuvka",
-              "da": "Skuffe",
-              "de": "Einschub",
-              "en": "Drawer",
-              "es": "Cajón",
-              "fi": "Laatikko",
-              "fr": "Tiroir",
-              "it": "Finestra",
-              "ja": "ドロワー",
-              "ko": "등록기",
-              "nb": "Skuff",
-              "nl": "Lade",
-              "pl": "Szuflada",
-              "pt-BR": "Caixa registradora",
-              "pt-PT": "Gaveta",
-              "sv": "Låda",
-              "th": "ลิ้นชัก",
-              "tr": "Çekmece",
-              "vi": "Ngăn",
-              "zh-CN": "抽屉",
-              "zh-TW": "收銀機"
-            }
+            "value": "2",
+            "label": "2/12 (16.67%)"
+          },
+          {
+            "value": "3",
+            "label": "3/12 (25.00%)"
+          },
+          {
+            "value": "4",
+            "label": "4/12 (33.33%)"
+          },
+          {
+            "value": "5",
+            "label": "5/12 (41.67%)"
+          },
+          {
+            "value": "6",
+            "label": "6/12 (50.00%)"
+          },
+          {
+            "value": "7",
+            "label": "7/12 (58.33%)"
+          },
+          {
+            "value": "8",
+            "label": "8/12 (66.67%)"
+          },
+          {
+            "value": "9",
+            "label": "9/12 (75.00%)"
+          },
+          {
+            "value": "10",
+            "label": "10/12 (83.33%)"
+          },
+          {
+            "value": "11",
+            "label": "11/12 (91.67%)"
+          },
+          {
+            "value": "12",
+            "label": "12/12 (100.00%)"
           }
-        ],
-        "label": {
-          "cs": "Typ košíku",
-          "da": "Indkøbskurvtype",
-          "de": "Warenkorbstil",
-          "en": "Cart type",
-          "es": "Tipo de carrito",
-          "fi": "Ostoskorin tyyppi",
-          "fr": "Type de panier",
-          "it": "Tipi di carrello",
-          "ja": "カートタイプ",
-          "ko": "카트 유형",
-          "nb": "Handlekurvtype",
-          "nl": "Winkelwagentype",
-          "pl": "Typ koszyka",
-          "pt-BR": "Tipo de carrinho",
-          "pt-PT": "Tipo de carrinho",
-          "sv": "Varukorgstyp",
-          "th": "ประเภทตะกร้าสินค้า",
-          "tr": "Sepet türü",
-          "vi": "Loại giỏ hàng",
-          "zh-CN": "购物车类型",
-          "zh-TW": "購物車類型"
-        }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 1 - Video"
       },
       {
         "type": "checkbox",
-        "id": "cart_notes_enable",
-        "label": {
-          "cs": "Povolit poznámky k objednávce",
-          "da": "Aktivér ordrebemærkninger",
-          "de": "Bestellhinweis aktivieren",
-          "en": "Enable order notes",
-          "es": "Habilitar notas de pedido",
-          "fi": "Ota tilauksen huomautukset käyttöön",
-          "fr": "Activer les notes de commande",
-          "it": "Abilita le note sugli ordini",
-          "ja": "注文メモを有効にする",
-          "ko": "주문 참고 사항 사용",
-          "nb": "Aktiver bestillingsmerknader",
-          "nl": "Opmerkingen bij bestellingen inschakelen",
-          "pl": "Włącz uwagi dotyczące zamówienia",
-          "pt-BR": "Habilitar observações de pedido",
-          "pt-PT": "Ativar as notas de encomendas",
-          "sv": "Aktivera orderanteckningar",
-          "th": "เปิดใช้หมายเหตุของคำสั่งซื้อ",
-          "tr": "Sipariş notlarını etkinleştirme",
-          "vi": "Bật ghi chú đơn hàng",
-          "zh-CN": "启用订单备注",
-          "zh-TW": "啟用訂單備註"
-        }
+        "id": "apmenuitem_evideo_1",
+        "label": "Enable"
+      },
+      {
+        "type": "select",
+        "id": "apmenuitem_columns_blockvideo_1",
+        "label": "Width",
+        "options": [
+          {
+            "value": "1",
+            "label": "1/12 (8.33%)"
+          },
+          {
+            "value": "2",
+            "label": "2/12 (16.67%)"
+          },
+          {
+            "value": "3",
+            "label": "3/12 (25.00%)"
+          },
+          {
+            "value": "4",
+            "label": "4/12 (33.33%)"
+          },
+          {
+            "value": "5",
+            "label": "5/12 (41.67%)"
+          },
+          {
+            "value": "6",
+            "label": "6/12 (50.00%)"
+          },
+          {
+            "value": "7",
+            "label": "7/12 (58.33%)"
+          },
+          {
+            "value": "8",
+            "label": "8/12 (66.67%)"
+          },
+          {
+            "value": "9",
+            "label": "9/12 (75.00%)"
+          },
+          {
+            "value": "10",
+            "label": "10/12 (83.33%)"
+          },
+          {
+            "value": "11",
+            "label": "11/12 (91.67%)"
+          },
+          {
+            "value": "12",
+            "label": "12/12 (100.00%)"
+          }
+        ]
+      },
+      {
+        "type": "textarea",
+        "id": "apmenuitem_cvideo_1",
+        "label": "Video Link",
+        "default": "https://cdn.shopify.com/s/files/1/0092/7563/7839/files/Videomenu.mp4?39752",
+        "info": "[Upload *.mp4 video here (<20mb)](/admin/settings/files)"
+      },
+      {
+        "type": "range",
+        "id": "apmenuitem_video_height_1",
+        "min": 200,
+        "max": 800,
+        "step": 10,
+        "unit": "px",
+        "label": "Video height",
+        "default": 300
+      },
+      {
+        "type": "checkbox",
+        "id": "apmenuitem_video_loop_1",
+        "label": "Loop video"
+      },
+      {
+        "type": "checkbox",
+        "id": "apmenuitem_video_mute_1",
+        "label": "Muted"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 1 - Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "apmenuitem_eproduct_1",
+        "label": "Enable"
+      },
+      {
+        "type": "select",
+        "id": "apmenuitem_columns_blockproducts_1",
+        "label": "Width",
+        "options": [
+          {
+            "value": "1",
+            "label": "1/12 (8.33%)"
+          },
+          {
+            "value": "2",
+            "label": "2/12 (16.67%)"
+          },
+          {
+            "value": "3",
+            "label": "3/12 (25.00%)"
+          },
+          {
+            "value": "4",
+            "label": "4/12 (33.33%)"
+          },
+          {
+            "value": "5",
+            "label": "5/12 (41.67%)"
+          },
+          {
+            "value": "6",
+            "label": "6/12 (50.00%)"
+          },
+          {
+            "value": "7",
+            "label": "7/12 (58.33%)"
+          },
+          {
+            "value": "8",
+            "label": "8/12 (66.67%)"
+          },
+          {
+            "value": "9",
+            "label": "9/12 (75.00%)"
+          },
+          {
+            "value": "10",
+            "label": "10/12 (83.33%)"
+          },
+          {
+            "value": "11",
+            "label": "11/12 (91.67%)"
+          },
+          {
+            "value": "12",
+            "label": "12/12 (100.00%)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "apmenuitem_tproduct_1",
+        "label": "Title"
+      },
+      {
+        "type": "collection",
+        "id": "apmenuitem_cproduct_1",
+        "label": "Collection"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 1 - Html"
+      },
+      {
+        "type": "checkbox",
+        "id": "apmenuitem_ehtml_1",
+        "label": "Enable"
+      },
+      {
+        "type": "select",
+        "id": "apmenuitem_columns_blockhtml_1",
+        "label": "Width",
+        "options": [
+          {
+            "value": "1",
+            "label": "1/12 (8.33%)"
+          },
+          {
+            "value": "2",
+            "label": "2/12 (16.67%)"
+          },
+          {
+            "value": "3",
+            "label": "3/12 (25.00%)"
+          },
+          {
+            "value": "4",
+            "label": "4/12 (33.33%)"
+          },
+          {
+            "value": "5",
+            "label": "5/12 (41.67%)"
+          },
+          {
+            "value": "6",
+            "label": "6/12 (50.00%)"
+          },
+          {
+            "value": "7",
+            "label": "7/12 (58.33%)"
+          },
+          {
+            "value": "8",
+            "label": "8/12 (66.67%)"
+          },
+          {
+            "value": "9",
+            "label": "9/12 (75.00%)"
+          },
+          {
+            "value": "10",
+            "label": "10/12 (83.33%)"
+          },
+          {
+            "value": "11",
+            "label": "11/12 (91.67%)"
+          },
+          {
+            "value": "12",
+            "label": "12/12 (100.00%)"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "apmenuitem_thtml_1",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "apmenuitem_eihtml_1",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "apmenuitem_ihtml_1",
+        "label": "Image"
+      },
+      {
+        "type": "textarea",
+        "id": "apmenuitem_chtml_1",
+        "label": "Description",
+        "info": "[💡 Build HTML](https://ap2020.myshopify.com/pages/html-builder)"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 2"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 3"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 4"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "MEGAMENU 5"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
       }
     ]
   },
   {
-    "name": {
-      "cs": "Sociální sítě",
-      "da": "Sociale medier",
-      "de": "Social Media",
-      "en": "Social media",
-      "es": "Redes sociales",
-      "fi": "Some",
-      "fr": "Médias sociaux",
-      "it": "Social media",
-      "ja": "SNS",
-      "ko": "소셜 미디어",
-      "nb": "Sosiale medier",
-      "nl": "Social media",
-      "pl": "Media społecznościowe",
-      "pt-BR": "Redes sociais",
-      "pt-PT": "Redes sociais",
-      "sv": "Sociala medier",
-      "th": "โซเชียลมีเดีย",
-      "tr": "Sosyal medya",
-      "vi": "Truyền thông xã hội",
-      "zh-CN": "社交媒体",
-      "zh-TW": "社交媒體"
-    },
+    "name": "Social media",
     "settings": [
       {
         "type": "header",
-        "content": {
-          "cs": "Účty",
-          "da": "Konti",
-          "de": "Konten",
-          "en": "Accounts",
-          "es": "Cuentas",
-          "fi": "Tilit",
-          "fr": "Comptes",
-          "it": "Account",
-          "ja": "アカウント",
-          "ko": "계정",
-          "nb": "Kontoer",
-          "nl": "Accounts",
-          "pl": "Konta",
-          "pt-BR": "Contas",
-          "pt-PT": "Contas",
-          "sv": "Konton",
-          "th": "บัญชี",
-          "tr": "Hesaplar",
-          "vi": "Tài khoản",
-          "zh-CN": "账户",
-          "zh-TW": "帳戶"
-        }
+        "content": "Social sharing image"
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Image",
+        "info": "Shown when sharing a link on social media. [Learn more](https://help.shopify.com/manual/using-themes/troubleshooting/showing-social-media-thumbnail-images/) about image thumbnails."
+      },
+      {
+        "type": "header",
+        "content": "Accounts"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
-        "label": {
-          "cs": "Facebook",
-          "da": "Facebook",
-          "de": "Facebook",
-          "en": "Facebook",
-          "es": "Facebook",
-          "fi": "Facebook",
-          "fr": "Facebook",
-          "it": "Facebook",
-          "ja": "Facebook",
-          "ko": "Facebook",
-          "nb": "Facebook",
-          "nl": "Facebook",
-          "pl": "Facebook",
-          "pt-BR": "Facebook",
-          "pt-PT": "Facebook",
-          "sv": "Facebook",
-          "th": "Facebook",
-          "tr": "Facebook",
-          "vi": "Facebook",
-          "zh-CN": "Facebook",
-          "zh-TW": "Facebook"
-        },
-        "info": {
-          "cs": "https:\/\/www.facebook.com\/shopify",
-          "da": "https:\/\/www.facebook.com\/shopify",
-          "de": "https:\/\/www.facebook.com\/shopify",
-          "en": "https:\/\/www.facebook.com\/shopify",
-          "es": "https:\/\/www.facebook.com\/shopify",
-          "fi": "https:\/\/www.facebook.com\/shopify",
-          "fr": "https:\/\/www.facebook.com\/shopify",
-          "it": "https:\/\/www.facebook.com\/shopify",
-          "ja": "https:\/\/www.facebook.com\/shopify",
-          "ko": "https:\/\/www.facebook.com\/shopify",
-          "nb": "https:\/\/www.facebook.com\/shopify",
-          "nl": "https:\/\/www.facebook.com\/shopify",
-          "pl": "https:\/\/www.facebook.com\/shopify",
-          "pt-BR": "https:\/\/www.facebook.com\/shopify",
-          "pt-PT": "https:\/\/www.facebook.com\/shopify",
-          "sv": "https:\/\/www.facebook.com\/shopify",
-          "th": "https:\/\/www.facebook.com\/shopify",
-          "tr": "https:\/\/www.facebook.com\/shopify",
-          "vi": "https:\/\/www.facebook.com\/shopify",
-          "zh-CN": "https:\/\/www.facebook.com\/shopify",
-          "zh-TW": "https:\/\/www.facebook.com\/shopify"
-        }
+        "label": "Facebook",
+        "info": "https://www.facebook.com/shopify"
       },
       {
         "type": "text",
         "id": "social_twitter_link",
-        "label": {
-          "cs": "Twitter",
-          "da": "Twitter",
-          "de": "Twitter",
-          "en": "Twitter",
-          "es": "Twitter",
-          "fi": "Twitter",
-          "fr": "Twitter",
-          "it": "Twitter",
-          "ja": "Twitter",
-          "ko": "Twitter",
-          "nb": "Twitter",
-          "nl": "Twitter",
-          "pl": "Twitter",
-          "pt-BR": "Twitter",
-          "pt-PT": "Twitter",
-          "sv": "Twitter",
-          "th": "Twitter",
-          "tr": "Twitter",
-          "vi": "Twitter",
-          "zh-CN": "Twitter",
-          "zh-TW": "Twitter"
-        },
-        "info": {
-          "cs": "https:\/\/twitter.com\/shopify",
-          "da": "https:\/\/twitter.com\/shopify",
-          "de": "https:\/\/twitter.com\/shopify",
-          "en": "https:\/\/twitter.com\/shopify",
-          "es": "https:\/\/twitter.com\/shopify",
-          "fi": "https:\/\/twitter.com\/shopify",
-          "fr": "https:\/\/twitter.com\/shopify",
-          "it": "https:\/\/twitter.com\/shopify",
-          "ja": "https:\/\/twitter.com\/shopify",
-          "ko": "https:\/\/twitter.com\/shopify",
-          "nb": "https:\/\/twitter.com\/shopify",
-          "nl": "https:\/\/twitter.com\/shopify",
-          "pl": "https:\/\/twitter.com\/shopify",
-          "pt-BR": "https:\/\/twitter.com\/shopify",
-          "pt-PT": "https:\/\/twitter.com\/shopify",
-          "sv": "https:\/\/twitter.com\/shopify",
-          "th": "https:\/\/twitter.com\/shopify",
-          "tr": "https:\/\/twitter.com\/shopify",
-          "vi": "https:\/\/twitter.com\/shopify",
-          "zh-CN": "https:\/\/twitter.com\/shopify",
-          "zh-TW": "https:\/\/twitter.com\/shopify"
-        }
+        "label": "Twitter",
+        "info": "https://twitter.com/shopify"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
-        "label": {
-          "cs": "Pinterest",
-          "da": "Pinterest",
-          "de": "Pinterest",
-          "en": "Pinterest",
-          "es": "Pinterest",
-          "fi": "Pinterest",
-          "fr": "Pinterest",
-          "it": "Pinterest",
-          "ja": "Pinterest",
-          "ko": "Pinterest",
-          "nb": "Pinterest",
-          "nl": "Pinterest",
-          "pl": "Pinterest",
-          "pt-BR": "Pinterest",
-          "pt-PT": "Pinterest",
-          "sv": "Pinterest",
-          "th": "Pinterest",
-          "tr": "Pinterest",
-          "vi": "Pinterest",
-          "zh-CN": "Pinterest",
-          "zh-TW": "Pinterest"
-        },
-        "info": {
-          "cs": "https:\/\/www.pinterest.com\/shopify",
-          "da": "https:\/\/www.pinterest.com\/shopify",
-          "de": "https:\/\/www.pinterest.com\/shopify",
-          "en": "https:\/\/www.pinterest.com\/shopify",
-          "es": "https:\/\/www.pinterest.com\/shopify",
-          "fi": "https:\/\/www.pinterest.com\/shopify",
-          "fr": "https:\/\/www.pinterest.com\/shopify",
-          "it": "https:\/\/www.pinterest.com\/shopify",
-          "ja": "https:\/\/www.pinterest.com\/shopify",
-          "ko": "https:\/\/www.pinterest.com\/shopify",
-          "nb": "https:\/\/www.pinterest.com\/shopify",
-          "nl": "https:\/\/www.pinterest.com\/shopify",
-          "pl": "https:\/\/www.pinterest.com\/shopify",
-          "pt-BR": "https:\/\/www.pinterest.com\/shopify",
-          "pt-PT": "https:\/\/www.pinterest.com\/shopify",
-          "sv": "https:\/\/www.pinterest.com\/shopify",
-          "th": "https:\/\/www.pinterest.com\/shopify",
-          "tr": "https:\/\/www.pinterest.com\/shopify",
-          "vi": "https:\/\/www.pinterest.com\/shopify",
-          "zh-CN": "https:\/\/www.pinterest.com\/shopify",
-          "zh-TW": "https:\/\/www.pinterest.com\/shopify"
-        }
+        "label": "Pinterest",
+        "info": "https://www.pinterest.com/shopify"
       },
       {
         "type": "text",
         "id": "social_instagram_link",
-        "label": {
-          "cs": "Instagram",
-          "da": "Instagram",
-          "de": "Instagram",
-          "en": "Instagram",
-          "es": "Instagram",
-          "fi": "Instagram",
-          "fr": "Instagram",
-          "it": "Instagram",
-          "ja": "Instagram",
-          "ko": "Instagram",
-          "nb": "Instagram",
-          "nl": "Instagram",
-          "pl": "Instagram",
-          "pt-BR": "Instagram",
-          "pt-PT": "Instagram",
-          "sv": "Instagram",
-          "th": "Instagram",
-          "tr": "Instagram",
-          "vi": "Instagram",
-          "zh-CN": "Instagram",
-          "zh-TW": "Instagram"
-        },
-        "info": {
-          "cs": "https:\/\/instagram.com\/shopify",
-          "da": "https:\/\/instagram.com\/shopify",
-          "de": "https:\/\/instagram.com\/shopify",
-          "en": "https:\/\/instagram.com\/shopify",
-          "es": "https:\/\/instagram.com\/shopify",
-          "fi": "https:\/\/instagram.com\/shopify",
-          "fr": "https:\/\/instagram.com\/shopify",
-          "it": "https:\/\/instagram.com\/shopify",
-          "ja": "https:\/\/instagram.com\/shopify",
-          "ko": "https:\/\/instagram.com\/shopify",
-          "nb": "https:\/\/instagram.com\/shopify",
-          "nl": "https:\/\/instagram.com\/shopify",
-          "pl": "https:\/\/instagram.com\/shopify",
-          "pt-BR": "https:\/\/instagram.com\/shopify",
-          "pt-PT": "https:\/\/instagram.com\/shopify",
-          "sv": "https:\/\/instagram.com\/shopify",
-          "th": "https:\/\/instagram.com\/shopify",
-          "tr": "https:\/\/instagram.com\/shopify",
-          "vi": "https:\/\/instagram.com\/shopify",
-          "zh-CN": "https:\/\/instagram.com\/shopify",
-          "zh-TW": "https:\/\/instagram.com\/shopify"
-        }
-      },
-      {
-        "type": "text",
-        "id": "social_snapchat_link",
-        "label": {
-          "cs": "Snapchat",
-          "da": "Snapchat",
-          "de": "Snapchat",
-          "en": "Snapchat",
-          "es": "Snapchat",
-          "fi": "Snapchat",
-          "fr": "Snapchat",
-          "it": "Snapchat",
-          "ja": "Snapchat",
-          "ko": "Snapchat",
-          "nb": "Snapchat",
-          "nl": "Snapchat",
-          "pl": "Snapchat",
-          "pt-BR": "Snapchat",
-          "pt-PT": "Snapchat",
-          "sv": "Snapchat",
-          "th": "Snapchat",
-          "tr": "Snapchat",
-          "vi": "Snapchat",
-          "zh-CN": "Snapchat",
-          "zh-TW": "Snapchat"
-        },
-        "info": {
-          "cs": "https:\/\/www.snapchat.com\/add\/shopify",
-          "da": "https:\/\/www.snapchat.com\/add\/shopify",
-          "de": "https:\/\/www.snapchat.com\/add\/shopify",
-          "en": "https:\/\/www.snapchat.com\/add\/shopify",
-          "es": "https:\/\/www.snapchat.com\/add\/shopify",
-          "fi": "https:\/\/www.snapchat.com\/add\/shopify",
-          "fr": "https:\/\/www.snapchat.com\/add\/shopify",
-          "it": "https:\/\/www.snapchat.com\/add\/shopify",
-          "ja": "https:\/\/www.snapchat.com\/add\/shopify",
-          "ko": "https:\/\/www.snapchat.com\/add\/shopify",
-          "nb": "https:\/\/snapchat.com\/add\/shopify",
-          "nl": "https:\/\/www.snapchat.com\/add\/shopify",
-          "pl": "https:\/\/www.snapchat.com\/add\/shopify",
-          "pt-BR": "https:\/\/www.snapchat.com\/add\/shopify",
-          "pt-PT": "https:\/\/www.snapchat.com\/add\/shopify",
-          "sv": "https:\/\/www.snapchat.com\/add\/shopify",
-          "th": "https:\/\/www.snapchat.com\/add\/shopify",
-          "tr": "https:\/\/www.snapchat.com\/add\/shopify",
-          "vi": "https:\/\/www.snapchat.com\/add\/shopify",
-          "zh-CN": "https:\/\/www.snapchat.com\/add\/shopify",
-          "zh-TW": "https:\/\/www.snapchat.com\/add\/shopify"
-        }
-      },
-      {
-        "type": "text",
-        "id": "social_google_plus_link",
-        "label": {
-          "cs": "Google Plus",
-          "da": "Google Plus",
-          "de": "Google Plus",
-          "en": "Google Plus",
-          "es": "Google Plus",
-          "fi": "Google Plus",
-          "fr": "Google Plus",
-          "it": "Google Plus",
-          "ja": "Google Plus",
-          "ko": "Google 플러스",
-          "nb": "Google Plus",
-          "nl": "Google Plus",
-          "pl": "Google Plus",
-          "pt-BR": "Google Plus",
-          "pt-PT": "Google Plus",
-          "sv": "Google Plus",
-          "th": "Google Plus",
-          "tr": "Google Plus",
-          "vi": "Google Plus",
-          "zh-CN": "Google Plus",
-          "zh-TW": "Google+"
-        },
-        "info": {
-          "cs": "https:\/\/plus.google.com\/+shopify",
-          "da": "https:\/\/plus.google.com\/+shopify",
-          "de": "https:\/\/plus.google.com\/+shopify",
-          "en": "https:\/\/plus.google.com\/+shopify",
-          "es": "https:\/\/plus.google.com\/+shopify",
-          "fi": "https:\/\/plus.google.com\/+shopify",
-          "fr": "https:\/\/plus.google.com\/+shopify",
-          "it": "https:\/\/plus.google.com\/+shopify",
-          "ja": "https:\/\/plus.google.com\/+shopify",
-          "ko": "https:\/\/plus.google.com\/+shopify",
-          "nb": "https:\/\/plus.google.com\/+shopify",
-          "nl": "https:\/\/plus.google.com\/+shopify",
-          "pl": "https:\/\/plus.google.com\/+shopify",
-          "pt-BR": "https:\/\/plus.google.com\/+shopify",
-          "pt-PT": "https:\/\/plus.google.com\/+shopify",
-          "sv": "https:\/\/plus.google.com\/+shopify",
-          "th": "https:\/\/plus.google.com\/+shopify",
-          "tr": "https:\/\/plus.google.com\/+shopify",
-          "vi": "https:\/\/plus.google.com\/+shopify",
-          "zh-CN": "https:\/\/plus.google.com\/+shopify",
-          "zh-TW": "https:\/\/plus.google.com\/+shopify"
-        }
+        "label": "Instagram",
+        "info": "https://instagram.com/shopify"
       },
       {
         "type": "text",
         "id": "social_tumblr_link",
-        "label": {
-          "cs": "Tumblr",
-          "da": "Tumblr",
-          "de": "Tumblr",
-          "en": "Tumblr",
-          "es": "Tumblr",
-          "fi": "Tumblr",
-          "fr": "Tumblr",
-          "it": "Tumblr",
-          "ja": "Tumblr",
-          "ko": "Tumblr",
-          "nb": "Tumblr",
-          "nl": "Tumblr",
-          "pl": "Tumblr",
-          "pt-BR": "Tumblr",
-          "pt-PT": "Tumblr",
-          "sv": "Tumblr",
-          "th": "Tumblr",
-          "tr": "Tumblr",
-          "vi": "Tumblr",
-          "zh-CN": "Tumblr",
-          "zh-TW": "Tumblr"
-        },
-        "info": {
-          "cs": "http:\/\/shopify.tumblr.com",
-          "da": "http:\/\/shopify.tumblr.com",
-          "de": "http:\/\/shopify.tumblr.com",
-          "en": "http:\/\/shopify.tumblr.com",
-          "es": "http:\/\/shopify.tumblr.com",
-          "fi": "http:\/\/shopify.tumblr.com",
-          "fr": "http:\/\/shopify.tumblr.com",
-          "it": "http:\/\/shopify.tumblr.com",
-          "ja": "http:\/\/shopify.tumblr.com",
-          "ko": "http:\/\/shopify.tumblr.com",
-          "nb": "http:\/\/shopify.tumblr.com",
-          "nl": "http:\/\/shopify.tumblr.com",
-          "pl": "http:\/\/shopify.tumblr.com",
-          "pt-BR": "http:\/\/shopify.tumblr.com",
-          "pt-PT": "http:\/\/shopify.tumblr.com",
-          "sv": "http:\/\/shopify.tumblr.com",
-          "th": "http:\/\/shopify.tumblr.com",
-          "tr": "http:\/\/shopify.tumblr.com",
-          "vi": "http:\/\/shopify.tumblr.com",
-          "zh-CN": "http:\/\/shopify.tumblr.com",
-          "zh-TW": "http:\/\/shopify.tumblr.com"
-        }
+        "label": "Tumblr",
+        "info": "http://shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "info": "https://www.snapchat.com/add/shopify"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
-        "label": {
-          "cs": "YouTube",
-          "da": "YouTube",
-          "de": "Youtube",
-          "en": "YouTube",
-          "es": "Youtube",
-          "fi": "YouTube",
-          "fr": "YouTube",
-          "it": "YouTube",
-          "ja": "YouTube",
-          "ko": "YouTube",
-          "nb": "YouTube",
-          "nl": "YouTube",
-          "pl": "Youtube",
-          "pt-BR": "YouTube",
-          "pt-PT": "YouTube",
-          "sv": "YouTube",
-          "th": "YouTube",
-          "tr": "YouTube",
-          "vi": "YouTube",
-          "zh-CN": "YouTube",
-          "zh-TW": "YouTube"
-        },
-        "info": {
-          "cs": "https:\/\/www.youtube.com\/user\/shopify",
-          "da": "https:\/\/www.youtube.com\/user\/shopify",
-          "de": "https:\/\/www.youtube.com\/user\/shopify",
-          "en": "https:\/\/www.youtube.com\/user\/shopify",
-          "es": "https:\/\/www.youtube.com\/user\/shopify",
-          "fi": "https:\/\/www.youtube.com\/user\/shopify",
-          "fr": "https:\/\/www.youtube.com\/user\/shopify",
-          "it": "https:\/\/www.youtube.com\/user\/shopify",
-          "ja": "https:\/\/www.youtube.com\/user\/shopify",
-          "ko": "https:\/\/www.youtube.com\/user\/shopify",
-          "nb": "https:\/\/www.youtube.com\/user\/shopify",
-          "nl": "https:\/\/www.youtube.com\/user\/shopify",
-          "pl": "https:\/\/www.youtube.com\/user\/shopify",
-          "pt-BR": "https:\/\/www.youtube.com\/user\/shopify",
-          "pt-PT": "https:\/\/www.youtube.com\/user\/shopify",
-          "sv": "https:\/\/www.youtube.com\/user\/shopify",
-          "th": "https:\/\/www.youtube.com\/user\/shopify",
-          "tr": "https:\/\/www.youtube.com\/user\/shopify",
-          "vi": "https:\/\/www.youtube.com\/user\/shopify",
-          "zh-CN": "https:\/\/www.youtube.com\/user\/shopify",
-          "zh-TW": "https:\/\/www.youtube.com\/user\/shopify"
-        }
+        "label": "YouTube",
+        "info": "https://www.youtube.com/user/shopify"
       },
       {
         "type": "text",
         "id": "social_vimeo_link",
-        "label": {
-          "cs": "Vimeo",
-          "da": "Vimeo",
-          "de": "Vimeo",
-          "en": "Vimeo",
-          "es": "Vimeo",
-          "fi": "Vimeo",
-          "fr": "Vimeo",
-          "it": "Vimeo",
-          "ja": "Vimeo",
-          "ko": "Vimeo",
-          "nb": "Vimeo",
-          "nl": "Vimeo",
-          "pl": "Vimeo",
-          "pt-BR": "Vimeo",
-          "pt-PT": "Vimeo",
-          "sv": "Vimeo",
-          "th": "Vimeo",
-          "tr": "Vimeo",
-          "vi": "Vimeo",
-          "zh-CN": "Vimeo",
-          "zh-TW": "Vimeo"
-        },
-        "info": {
-          "cs": "https:\/\/vimeo.com\/shopify",
-          "da": "https:\/\/vimeo.com\/shopify",
-          "de": "https:\/\/vimeo.com\/shopify",
-          "en": "https:\/\/vimeo.com\/shopify",
-          "es": "https:\/\/vimeo.com\/shopify",
-          "fi": "https:\/\/vimeo.com\/shopify",
-          "fr": "https:\/\/vimeo.com\/shopify",
-          "it": "https:\/\/vimeo.com\/shopify",
-          "ja": "https:\/\/vimeo.com\/shopify",
-          "ko": "https:\/\/vimeo.com\/shopify",
-          "nb": "https:\/\/vimeo.com\/shopify",
-          "nl": "https:\/\/vimeo.com\/shopify",
-          "pl": "https:\/\/vimeo.com\/shopify",
-          "pt-BR": "https:\/\/vimeo.com\/shopify",
-          "pt-PT": "https:\/\/vimeo.com\/shopify",
-          "sv": "https:\/\/vimeo.com\/shopify",
-          "th": "https:\/\/vimeo.com\/shopify",
-          "tr": "https:\/\/vimeo.com\/shopify",
-          "vi": "https:\/\/vimeo.com\/shopify",
-          "zh-CN": "https:\/\/vimeo.com\/shopify",
-          "zh-TW": "https:\/\/vimeo.com\/shopify"
-        }
-      },
-      {
-        "type": "text",
-        "id": "social_fancy_link",
-        "label": {
-          "cs": "Fancy",
-          "da": "Fancy",
-          "de": "Fancy",
-          "en": "Fancy",
-          "es": "Fancy",
-          "fi": "Fancy",
-          "fr": "Fancy",
-          "it": "Fancy",
-          "ja": "Fancy",
-          "ko": "팬시",
-          "nb": "Fancy",
-          "nl": "Chique",
-          "pl": "Fancy",
-          "pt-BR": "Fancy",
-          "pt-PT": "Fancy",
-          "sv": "Fancy",
-          "th": "Fancy",
-          "tr": "Fancy",
-          "vi": "Fancy",
-          "zh-CN": "Fancy",
-          "zh-TW": "Fancy"
-        },
-        "info": {
-          "cs": "http:\/\/fancy.com\/Shopify",
-          "da": "http:\/\/fancy.com\/Shopify",
-          "de": "http:\/\/fancy.com\/Shopify",
-          "en": "http:\/\/fancy.com\/Shopify",
-          "es": "http:\/\/fancy.com\/Shopify",
-          "fi": "http:\/\/fancy.com\/Shopify",
-          "fr": "http:\/\/fancy.com\/Shopify",
-          "it": "http:\/\/fancy.com\/Shopify",
-          "ja": "http:\/\/fancy.com\/Shopify",
-          "ko": "http:\/\/fancy.com\/Shopify",
-          "nb": "http:\/\/fancy.com\/Shopify",
-          "nl": "http:\/\/fancy.com\/Shopify",
-          "pl": "http:\/\/fancy.com\/Shopify",
-          "pt-BR": "http:\/\/fancy.com\/Shopify",
-          "pt-PT": "http:\/\/fancy.com\/Shopify",
-          "sv": "http:\/\/fancy.com\/Shopify",
-          "th": "http:\/\/fancy.com\/Shopify",
-          "tr": "http:\/\/fancy.com\/Shopify",
-          "vi": "http:\/\/fancy.com\/Shopify",
-          "zh-CN": "http:\/\/fancy.com\/Shopify",
-          "zh-TW": "http:\/\/fancy.com\/Shopify"
-        }
+        "label": "Vimeo",
+        "info": "https://vimeo.com/shopify"
       },
       {
         "type": "header",
-        "content": {
-          "cs": "Možnosti sdílení",
-          "da": "Muligheder for deling",
-          "de": "Optionen zum Teilen",
-          "en": "Sharing options",
-          "es": "Opciones para compartir",
-          "fi": "Jakamisasetukset",
-          "fr": "Options de partage",
-          "it": "Opzioni di condivisione",
-          "ja": "シェアのオプション",
-          "ko": "공유 옵션",
-          "nb": "Alternativer for deling",
-          "nl": "Opties voor delen",
-          "pl": "Opcje udostępniania",
-          "pt-BR": "Opções de compartilhamento",
-          "pt-PT": "Opções de partilha",
-          "sv": "Delningsalternativ",
-          "th": "ตัวเลือกการแชร์",
-          "tr": "Paylaşım seçenekleri",
-          "vi": "Tùy chọn chia sẻ",
-          "zh-CN": "共享选项",
-          "zh-TW": "分享選項"
-        }
+        "content": "Sharing"
       },
       {
         "type": "checkbox",
         "id": "share_facebook",
-        "label": {
-          "cs": "Sdílet na Facebooku",
-          "da": "Del på Facebook",
-          "de": "Auf Facebook teilen",
-          "en": "Share on Facebook",
-          "es": "Compartir en Facebook",
-          "fi": "Jaa Facebookissa",
-          "fr": "Partager sur Facebook",
-          "it": "Condividi su Facebook",
-          "ja": "Facebookでシェアする",
-          "ko": "Facebook에서 공유",
-          "nb": "Del på Facebook",
-          "nl": "Delen op Facebook",
-          "pl": "Udostępnij na Facebooku",
-          "pt-BR": "Compartilhar no Facebook",
-          "pt-PT": "Partilhe no Facebook",
-          "sv": "Dela på Facebook",
-          "th": "แชร์บน Facebook",
-          "tr": "Facebook'ta paylaş",
-          "vi": "Chia sẻ trên Facebook",
-          "zh-CN": "在 Facebook 上共享",
-          "zh-TW": "分享至 Facebook"
-        },
+        "label": "Share on Facebook",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "share_twitter",
-        "label": {
-          "cs": "Tweetnout na Twitteru",
-          "da": "Tweet på Twitter",
-          "de": "Auf Twitter twittern",
-          "en": "Tweet on Twitter",
-          "es": "Tuitear en Twitter",
-          "fi": "Twiittaa Twitterissä",
-          "fr": "Tweeter sur Twitter",
-          "it": "Twitta su Twitter",
-          "ja": "Twitterに投稿する",
-          "ko": "Twitter에서 트윗 작성",
-          "nb": "Tweet på Twitter",
-          "nl": "Twitteren op Twitter",
-          "pl": "Tweetuj na Twitterze",
-          "pt-BR": "Tuitar",
-          "pt-PT": "Twittar no Twitter",
-          "sv": "Twittra på Twitter",
-          "th": "ทวีตบน Twitter",
-          "tr": "Twitter'da tweet'le",
-          "vi": "Tweet trên Twitter",
-          "zh-CN": "在 Twitter 上发推文",
-          "zh-TW": "在 Twitter 上發佈推文"
-        },
+        "label": "Tweet on Twitter",
         "default": true
       },
       {
         "type": "checkbox",
         "id": "share_pinterest",
-        "label": {
-          "cs": "Připnout na Pinterestu",
-          "da": "Pin på Pinterest",
-          "de": "Auf Pinterest pinnen",
-          "en": "Pin on Pinterest",
-          "es": "Pinear en Pinterest",
-          "fi": "Pinnaa Pinterestissä",
-          "fr": "Épingler sur Pinterest",
-          "it": "Pinna su Pinterest",
-          "ja": "Pinterestでピンする",
-          "ko": "Pinterest에 고정하기",
-          "nb": "Pin på Pinterest",
-          "nl": "Pinnen op Pinterest",
-          "pl": "Przypnij do tablicy Pinterest",
-          "pt-BR": "Incluir como pin no Pinterest",
-          "pt-PT": "Adicione no Pinterest",
-          "sv": "Spara en pin på Pinterest",
-          "th": "ปักหมุดบน Pinterest",
-          "tr": "Pinterest'te pin ekle",
-          "vi": "Ghim trên Pinterest",
-          "zh-CN": "固定在 Pinterest 上",
-          "zh-TW": "加入 Pinterest"
-        },
+        "label": "Pin on Pinterest",
         "default": true
       }
     ]
   },
   {
-    "name": {
-      "cs": "Favikona",
-      "da": "Favoritikon",
-      "de": "Favicon",
-      "en": "Favicon",
-      "es": "Favicon",
-      "fi": "Favicon",
-      "fr": "Favicon",
-      "it": "Favicon",
-      "ja": "ファビコン",
-      "ko": "Favicon",
-      "nb": "Favicon",
-      "nl": "Favicon",
-      "pl": "Ikona Favicon",
-      "pt-BR": "Favicon",
-      "pt-PT": "Favicon",
-      "sv": "Favicon",
-      "th": "Favicon",
-      "tr": "Favicon",
-      "vi": "Biểu tượng trang web",
-      "zh-CN": "网站图标",
-      "zh-TW": "Favicon"
-    },
+    "name": "Sidebar",
     "settings": [
       {
+        "type": "header",
+        "content": "List of collections"
+      },
+      {
+        "type": "checkbox",
+        "id": "categories_block_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "checkbox",
+        "id": "categories_block_productcount",
+        "label": "Show quantity"
+      },
+      {
+        "type": "checkbox",
+        "id": "categories_block_collapse",
+        "label": "Expand collapse"
+      },
+      {
+        "type": "text",
+        "id": "categories_block_title",
+        "label": "Title",
+        "default": "Collections"
+      },
+      {
+        "type": "text",
+        "id": "categories_block_number",
+        "label": "Number displayed",
+        "default": "10",
+        "info": "The number of collections displayed"
+      },
+      {
+        "type": "textarea",
+        "id": "categories_block_items",
+        "label": "Show selected collections",
+        "info": "Use \",\" to separate collection items. For ex: Category, Collections"
+      },
+      {
+        "type": "header",
+        "content": "List of vendors"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "List of types"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      }
+    ]
+  },
+  {
+    "name": "Sidebar blog pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "sidebar_tag",
+        "default": true,
+        "label": "Show tags"
+      },
+      {
+        "type": "header",
+        "content": "Recent Post"
+      },
+      {
+        "type": "checkbox",
+        "id": "sidebar_post",
+        "default": true,
+        "label": "Enable"
+      },
+      {
+        "type": "text",
+        "id": "sidebar_post_title",
+        "default": "Recent Post",
+        "label": "Title"
+      },
+      {
+        "type": "range",
+        "id": "sidebar_post_limit",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "label": "Limit",
+        "default": 5
+      },
+      {
+        "type": "header",
+        "content": "HTML"
+      },
+      {
+        "type": "text",
+        "id": "sidebar_html_title",
+        "default": "Something here",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "sidebar_html",
+        "label": "HTML code",
+        "info": "[💡 Build HTML](https://ap2020.myshopify.com/pages/html-builder)"
+      }
+    ]
+  },
+  {
+    "name": "Collection filter",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Price range"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "Filter"
+      },
+      {
+        "type": "checkbox",
+        "id": "shop_by_catalog_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_catalog_title",
+        "label": "Title",
+        "default": "Filter"
+      },
+      {
+        "type": "paragraph",
+        "content": "💡 [Filter works with product tags. You need to add tags here](/admin/bulk?resource_name=Product&order=title+asc&edit=tags&show=&ids=&metafield_titles=&metafield_options=)"
+      },
+      {
+        "type": "header",
+        "content": "Filter 1"
+      },
+      {
+        "type": "text",
+        "id": "filter_title_1",
+        "label": "Title",
+        "default": "Size"
+      },
+      {
+        "type": "textarea",
+        "id": "filter_list_1",
+        "label": "Value list (lowercase)",
+        "default": "tiny,small,medium,large,big",
+        "info": "Separate by a comma (Example: \"tiny,small,medium,large,big\")"
+      },
+      {
+        "type": "header",
+        "content": "Filter 2"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "Filter 3"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "Color filter"
+      },
+      {
+        "type": "checkbox",
+        "id": "shop_by_color_enable",
+        "label": "Enable"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_color_title",
+        "label": "Title",
+        "default": "Color"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_color_text_1",
+        "label": "Color 1"
+      },
+      {
+        "type": "image",
+        "id": "color-1.png",
+        "label": "Image 1"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_color_text_2",
+        "label": "Color 2"
+      },
+      {
+        "type": "image",
+        "id": "color-2.png",
+        "label": "Image 2"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_color_text_3",
+        "label": "Color 3"
+      },
+      {
+        "type": "image",
+        "id": "color-3.png",
+        "label": "Image 3"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_color_text_4",
+        "label": "Color 4"
+      },
+      {
+        "type": "image",
+        "id": "color-4.png",
+        "label": "Image 4"
+      },
+      {
+        "type": "text",
+        "id": "shop_by_color_text_5",
+        "label": "Color 5"
+      },
+      {
+        "type": "image",
+        "id": "color-5.png",
+        "label": "Image 5"
+      }
+    ]
+  },
+  {
+    "name": "Product metafields 🔥",
+    "settings": [
+      {
+        "type": "header",
+        "content": "🔀 Cross-sell"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "⬆️ Upsell"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "📹 Product video"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "🔗 Affiliate product"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "🚚 Free shipping"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "🚚 Shipping time"
+      },
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      },
+      {
+        "type": "header",
+        "content": "⌛ Deal - countdown"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_countdown_page",
+        "label": "Show in product page."
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_countdown_card",
+        "label": "Show in product grid item."
+      },
+      {
+        "type": "paragraph",
+        "content": "⏱ [Enter the end times here.](/admin/bulk?resource_name=Product&edit=metafields.info.countdown)"
+      },
+      {
+        "type": "paragraph",
+        "content": "💡 Example: 2025-12-30T00:00:00"
+      },
+      {
+        "type": "paragraph",
+        "content": "💡 Set blank to make hidden."
+      }
+    ]
+  },
+  {
+    "name": "Compare & Wishlist",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Compare"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_compare",
+        "label": "Enable"
+      },
+      {
+        "type": "header",
+        "content": "Wishlist"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_wishlsit",
+        "label": "Enable"
+      },
+      {
+        "type": "page",
+        "id": "page_wishlist",
+        "label": "Wishlist page",
+        "info": "[Create new page](/admin/pages/new) and select template suffix is page.wishlist"
+      }
+    ]
+  },
+  {
+    "name": "Cookie policy",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      }
+    ]
+  },
+  {
+    "name": "Multi Currencies",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "🔒 [Only available in Shopify Premium Theme.](https://gumroad.com/l/pNfB/sale)"
+      }
+    ]
+  },
+  {
+    "name": "404 Page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
         "type": "image_picker",
-        "id": "favicon",
-        "label": {
-          "cs": "Obrázek favikony",
-          "da": "Billede for favoritikon",
-          "de": "Favicon-Bild",
-          "en": "Favicon image",
-          "es": "Imagen de favicon",
-          "fi": "Favicon-kuva",
-          "fr": "Image favicon",
-          "it": "Immagine favicon",
-          "ja": "ファビコン画像",
-          "ko": "파비콘 이미지",
-          "nb": "Favicon-bilde",
-          "nl": "Favicon-afbeelding",
-          "pl": "Obraz ikony Favicon",
-          "pt-BR": "Imagem favicon",
-          "pt-PT": "Imagem Favicon",
-          "sv": "Favicon-bild",
-          "th": "รูปภาพ Favicon",
-          "tr": "Favicon görseli",
-          "vi": "Hình ảnh biểu tượng trang web",
-          "zh-CN": "网站图标图片",
-          "zh-TW": "Favicon 圖片"
-        },
-        "info": {
-          "cs": "Dojde ke zmenšení na 32 × 32 px",
-          "da": "Skaleres ned til 32 x 32 px",
-          "de": "Wird auf 32 x 32 Pixel verkleinert.",
-          "en": "Will be scaled down to 32 x 32px",
-          "es": "Se reducirá a 32 x 32px",
-          "fi": "Skaalataan 32 x 32 pikseliin",
-          "fr": "Sera réduite à 32 x 32 px",
-          "it": "Verrà ridimensionata a 32 x 32 pixel.",
-          "ja": "32×32ピクセルに縮小されます。",
-          "ko": "32x32 픽셀로 축소됩니다.",
-          "nb": "Vil skaleres ned til 32 x 32 px",
-          "nl": "Wordt verkleind tot 32x32 pixels",
-          "pl": "Zostanie zmniejszony do rozmiaru 32 x 32 piksele",
-          "pt-BR": "Será reduzida para 32 x 32 pixels",
-          "pt-PT": "Será reduzida para 32 x 32 px",
-          "sv": "Kommer skalas ned till 32 x 32 px",
-          "th": "จะถูกลดขนาดลงเป็น 32 x 32 พิกเซล",
-          "tr": "Ölçeği 32 x 32 piksele düşürülür",
-          "vi": "Sẽ được thu nhỏ xuống 32 x 32px",
-          "zh-CN": "将缩小到 32 x 32px",
-          "zh-TW": "將會縮小為 32 x 32 像素"
-        }
+        "id": "image_404",
+        "label": "404 image"
+      },
+      {
+        "type": "color",
+        "id": "found_text_color",
+        "label": "Text color",
+        "default": "#ff847b"
+      },
+      {
+        "type": "text",
+        "id": "found_html",
+        "label": "Title 404",
+        "default": "404 Error"
+      },
+      {
+        "type": "textarea",
+        "id": "sub_404",
+        "label": "Description",
+        "default": "Oops, This Page Could Not Be Found!",
+        "info": "[💡 Build HTML](https://ap2020.myshopify.com/pages/html-builder)"
+      },
+      {
+        "type": "text",
+        "id": "found_btnleft_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "found_btnleft_link",
+        "label": "Button Link"
       }
     ]
   }

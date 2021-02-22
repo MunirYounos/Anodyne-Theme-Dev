@@ -1,0 +1,38 @@
+<!-- section-heading.liquid - Apply for all section title -->
+{%- if settings.sectionheading == 'heading-0' -%}
+  {%- if section.settings.title != blank -%}
+  <h3 class="section-title-0 text-center mb-5 font-family-2">
+    <span>{{section.settings.title}}</span>
+  </h3>
+  {%- endif -%}
+  {%- if section.settings.des != blank -%}
+  <p class="text-center mb-5 mt-n5">{{section.settings.des}}</p>
+  {%- endif -%}
+{%- elsif settings.sectionheading == 'heading-1' -%}
+  {%- if section.settings.title != blank -%}
+  <h3 class="section-title-1 text-center mb-5 font-family-2">
+    <span>{{section.settings.title}}</span>
+  </h3>
+  {%- endif -%}
+  {%- if section.settings.des != blank -%}
+  <p class="text-center mb-5 mt-n4">{{section.settings.des}}</p>
+  {%- endif -%}
+{%- elsif settings.sectionheading == 'heading-2' -%}
+  {%- if section.settings.title != blank -%}
+  <div class="iconx5 pb-3">
+    <svg class="icon icon-title text-theme" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 35.3 16" xml:space="preserve"><g class="nc-icon-wrapper" stroke="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.7 0C1.2 0 0 1.2 0 2.7c0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7C5.3 1.2 4.1 0 2.7 0zm0 10.7c-1.5 0-2.7 1.2-2.7 2.7C0 14.8 1.2 16 2.7 16c1.5 0 2.7-1.2 2.7-2.7-.1-1.4-1.3-2.6-2.7-2.6zM12.7 0C11.2 0 10 1.2 10 2.7c0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7-.1-1.5-1.3-2.7-2.7-2.7zm0 10.7c-1.5 0-2.7 1.2-2.7 2.7 0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7-.1-1.5-1.3-2.7-2.7-2.7zM22.7 0C21.2 0 20 1.2 20 2.7c0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7C25.3 1.2 24.1 0 22.7 0zm0 10.7c-1.5 0-2.7 1.2-2.7 2.7 0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7c-.1-1.5-1.3-2.7-2.7-2.7zm10-5.4c1.5 0 2.7-1.2 2.7-2.7 0-1.5-1.2-2.7-2.7-2.7C31.2 0 30 1.2 30 2.7c0 1.4 1.2 2.6 2.7 2.6zm0 5.4c-1.5 0-2.7 1.2-2.7 2.7 0 1.5 1.2 2.7 2.7 2.7 1.5 0 2.7-1.2 2.7-2.7-.1-1.5-1.3-2.7-2.7-2.7z"></path></g></svg>
+  </div>
+  <h3 class="section-title-2 pl-5 mb-5 font-weight-bold">
+    <span>{{section.settings.title}}</span>
+  </h3>
+  {%- endif -%}
+  {%- if section.settings.des != blank -%}
+  <p class="pl-5 mb-5 mt-n5">{{section.settings.des}}</p>
+  {%- endif -%}
+{%- elsif settings.sectionheading == 'heading-3' -%}
+{%- elsif settings.sectionheading == 'heading-4' -%}
+{%- elsif settings.sectionheading == 'heading-5' -%}
+{%- elsif settings.sectionheading == 'heading-6' -%}
+{%- elsif settings.sectionheading == 'heading-7' -%}
+{%- elsif settings.sectionheading == 'heading-8' -%}
+{%- endif -%}

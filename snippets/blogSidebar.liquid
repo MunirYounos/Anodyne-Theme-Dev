@@ -1,0 +1,66 @@
+<style>
+  .col--sidebar-blog .content-block{padding:0 0 20px;margin:0;background:0 0}.list-blog-tags li{display:inline-block;padding:5px 10px;background:#e2e2e2;border-radius:5px;margin-right:5px;margin-bottom:5px;float:left;color:var(--g-main);font-weight:700}.list-blog-tags li a{color:#222;transition:all ease .3s;font-weight:400;font-size:calc(var(--g-font-size) - 1px)}.list-blog-tags li a:hover{color:var(--g-main)}.sidebar__title{font-size:calc(var(--g-font-size) + 6px)}.sidebar-blog__title a{color:#222;font-weight:700;margin:5px 0;display:block;transition:all ease .3s}.sidebar-blog__title a:hover{color:var(--g-main)}.sidebar-blog__item{display:flex;margin-bottom:15px;padding-bottom:15px;border-bottom:1px dashed #e2e2e2}.sidebar-blog__item:last-child{margin-bottom:0}.sidebar-blog__image{flex:0 0 100px;width:100px;padding-right:10px;display:flex;align-items:center;justify-content:center}.sidebar-blog__publish{font-size:90%;font-style:italic}
+</style>
+<!-- blog-sidebar.liquid -->
+<div class="col col--sidebar-blog">
+  <div class="sidebar-blog-wrap js-stick-parent">
+    {%- if settings.sidebar_post -%}
+    {%- assign limit = settings.sidebar_post_limit -%}
+    <div class="content-block content-block--small">
+      {%- if settings.sidebar_post_title -%}
+      <h6 class="sidebar__title">{{settings.sidebar_post_title}}</h6>
+      {%- endif -%}
+
+      {%- for article in blog.articles limit:limit -%}
+      <div class="sidebar-blog__item">
+        {%- if article.image -%}
+        <div class="sidebar-blog__image">
+          <a class="w-100" href="{{ article.url }}">
+            <img class="lazyload" data-src="{{ article.image | img_url: '300x' }}" >
+          </a>
+        </div>
+        {%- endif -%}
+
+        <div class="sidebar-blog__meta">
+          <div class="sidebar-blog__title">
+            <a href="{{ article.url }}">
+              {{article.title}}
+            </a>
+          </div>
+          <p class="sidebar-blog__publish">
+            {{ article.published_at | time_tag: format: 'month_day_year' }}
+          </p>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+
+    {%- if settings.sidebar_tag -%}
+    <div class="content-block content-block--small">
+      <h6 class="sidebar__title">{{ 'blogs.article.tags' | t }}</h6>
+      <ul class="list-unstyled list-blog-tags clearfix mb-3">
+        <li>
+          <a href="{{ blog.url }}">{{ 'blogs.article.all_tags' | t }}</a>
+        </li>
+        {%- for tag in blog.all_tags -%}
+        {%- if current_tags contains tag -%}
+        <li>{{ tag }}</li>
+        {%- else -%}
+        <li>{{ tag | link_to_tag: tag }}</li>
+        {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+    {%- endif -%}
+    
+    {%- if settings.sidebar_html != blank -%}
+    <div class="content-block content-block--small">
+      {%- if settings.sidebar_html_title != blank -%}
+      <h6 class="sidebar__title">{{ settings.sidebar_html_title }}</h6>
+      {%- endif -%}
+      {{settings.sidebar_html}}
+    </div>
+    {%- endif -%}
+  </div>
+</div>

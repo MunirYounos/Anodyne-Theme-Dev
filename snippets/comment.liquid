@@ -1,12 +1,8 @@
 <!-- /snippets/comment.liquid -->
-<div class="grid">
-  <div class="grid__item large--one-fifth">
-    <span class="h5 comment-author">{{ comment.author }}</span>
-    <time datetime="{{ comment.created_at | date: '%Y-%m-%dT%H:%M:%SZ' }}" class="comment-date">{{ comment.created_at | date: format: 'date' }}</time>
-  </div>
-  <div class="grid__item large--three-fifths">
-    <div class="rte rte--nomargin">
-      {{ comment.content }}
-    </div>
-  </div>
+<p>
+  <span class="h6">{{ comment.author }}</span> - 
+  <small>{{ comment.created_at | time_tag: format: 'month_day_year' }}</small>
+</p>
+<div class="comment__content rte">
+  {{ comment.content }}
 </div>
